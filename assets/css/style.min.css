@@ -401,6 +401,18 @@ p {
   }
 }
 
+/* The element */
+.about-page__link {
+  font-size: 1.5625rem;
+  font-weight: var(--normal);
+  /* Checks if it has mobile size property */
+}
+@media only screen and (max-width: 840px) {
+  .about-page__link {
+    font-size: 1.1rem;
+  }
+}
+
 /* Generate for color classes */
 /*RGB values for colors */
 .hex-primary {
@@ -4392,6 +4404,66 @@ footer {
   margin-left: auto;
 }
 
+.about-page__list {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.about-page__list .about-page__item:not(:first-of-type) {
+  margin-left: 7vw;
+}
+.about-page__list .about-page__link {
+  color: var(--primary);
+  font-family: "Arvo", "Times New Roman", serif;
+}
+.about-page__list .about-page__link:hover {
+  font-weight: bold;
+}
+.about-page__list .about-page__link--current {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+  .about-page__list {
+    justify-content: center;
+  }
+}
+.history__image {
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.history__image-container {
+  align-item: center;
+}
+
+.history__button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: block !important;
+}
+
+.history__blurb p {
+  padding: 15px 25px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .history-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .history__image-container {
+    width: 100%;
+  }
+}
 .btn-accent {
   background-color: #DD8527;
   color: #fff;

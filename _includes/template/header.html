@@ -14,7 +14,7 @@
  <title>Folk Ridge</title>
 
  <!-- Row Styles -->
- <link rel="stylesheet" href="assets/css/style.min.css">
+ <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.min.css">
  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 
@@ -24,3 +24,62 @@
 
   <!-- Start Main -->
   <div id="main">
+
+  <!-- Row Header -->
+
+   <header class="">
+    <!-- Row Logo -->
+    <div class="logo__container">
+     <div class="logo__wrapper">
+      <a href="#" target="_blank" class="logo-img__container">
+       <img src="{{site.baseurl}}/assets/images/folkridge-logo.svg" alt="Folk Ridge" title="Folk Ridge" class="logo-img">
+      </a>
+      <a href="#" target="_blank" class="logo-text">
+       <span class="logo-text__first">FOLK</span>
+       RIDGE
+      </a>
+     </div>
+     <!-- Hamburger -->
+     <svg width="24" height="40" class="burger" id="navOpen">
+      <rect x="0" y="8" width="100%" height="3" fill="#fff" class="burger-line"></rect>
+      <rect x="0" y="16" width="70%" height="3" fill="#fff" class="burger-line"></rect>
+      <rect x="0" y="24" width="45%" height="3" fill="#fff" class="burger-line"></rect>
+   
+     </svg>
+    </div>
+    <!-- End Logo -->
+   
+    <!-- Row Navigation -->
+    <div class="nav-overlay" id="navOverlay">
+     <nav id="nav" class="nav--transition">
+      <i class="nav-close fa fa-close fa-2x" id="navClose"></i>
+      <ul class="nav-list">
+       <li class="nav-list__item">
+        <a href="{{site.baseurl}}/index.html" class="nav-link">HOME</a>
+       </li>
+       <li class="nav-list__item has-submenu">
+        <a href="#" target="_blank" class="nav-link">ABOUT</a>
+        <ul class="submenu">
+         <li class="submenu-item"><a href="{{site.baseurl}}/about/history"
+           class="submenu-item__link">History</a></li>
+         <li class="submenu-item"><a href="{{site.baseurl}}/the-band/" class="submenu-item__link">The
+           Band</a></li>
+         <li class="submenu-item"><a href="{{site.baseurl}}/reserves/"
+           class="submenu-item__link">Reserves</a></li>
+        </ul>
+       </li>
+       <li class="nav-list__item">
+        <a href="#" target="_blank" class="nav-link">GALLERY</a>
+       </li>
+       <li class="nav-list__item">
+        <a href="{{site.baseurl}}/rates/" class="nav-link">RATES</a>
+       </li>
+       <li class="nav-list__item">
+        <a href="{{site.baseurl}}/contact/" class="nav-link">CONTACT</a>
+       </li>
+   
+      </ul>
+     </nav>
+    </div>
+    <!-- End Navigation -->
+   </header>

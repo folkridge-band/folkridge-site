@@ -1,0 +1,38 @@
+ .history__image{
+   width: 90%;
+   max-width:550px;
+   margin: 0 auto;
+   display:flex;
+   justify-content:center;
+ }
+
+ .history__image-container{
+  align-item: center;
+ }
+
+.history__button{
+ width:max-content;
+ margin-left: auto;
+ margin-right: auto;
+ display:block !important;
+}
+
+.history__blurb{
+ p{
+  padding:15px 25px;
+ }
+}
+
+@media #{$device-md}{
+ .history-container{
+   flex-wrap: wrap;
+   justify-content:center;
+   margin-top:20px;
+ }
+
+ .history__image-container{
+    width:100%;
+ }
+
+ 
+}

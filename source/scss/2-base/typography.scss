@@ -85,6 +85,12 @@ $text-elements: (
     size:1rem,
     mobile-size:0.875rem,
     weight:var(--normal)
+  ),
+
+  '.about-page__link':(
+    size:1.5625rem,
+    mobile-size:1.1rem,
+    weight:var(--normal)
   )
 
 );

@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<!-- Menu for about page -->
+<div class="container container__flex">
+ <ul class="about-page__list mt-40 mb-40">
+  <li class="about-page__item">
+   <a href="{{site.baseurl}}/about/history" class="about-page__link {% if page.url == '/about/history/' %} about-page__link--current{% endif %}">HISTORY</a>
+  </li>
+  <li class="about-page__item">
+   <a href="{{site.baseurl}}/about/the-band" class="about-page__link {% if page.url == '/about/the-band/' %} about-page__link--current{% endif %}">THE BAND</a>
+  </li>
+  <li class="about-page__item">
+   <a href="{{site.baseurl}}/about/reserves" class="about-page__link {% if page.url == '/about/reserves/' %} about-page__link--current{% endif %}">RESERVES</a>
+  </li>
+ </ul>
+</div>
+
+{{content}}

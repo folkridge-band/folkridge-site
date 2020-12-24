@@ -1,0 +1,32 @@
+.about-page__list{
+ display:flex;
+ justify-content: flex-end;
+ width:100%;
+
+ .about-page__item{
+   &:not(:first-of-type){
+    margin-left: 7vw;
+   }
+ }
+
+ .about-page__link{
+  color:var(--primary);
+  font-family: $serif;
+
+  &:hover{
+   font-weight: bold;
+  }
+ }
+
+ .about-page__link--current{
+  font-weight:bold;
+ }
+
+}
+
+@media #{$device-md}{
+ .about-page__list{
+   justify-content: center;
+ }
+}
+
