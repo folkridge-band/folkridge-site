@@ -37,7 +37,6 @@ class Menuet {
 
  close(){
   this.overlay.addEventListener('click', (e) => {
-    console.log(e.target)
     if (e.target == this.overlay || e.target == this.closeTrigger) {
       try {
         this.nav.classList.remove('nav--show');
@@ -118,15 +117,18 @@ stick() {
     menuItems.forEach(item => {
       if (item.classList.contains('has-submenu')) {
         item.addEventListener('click', (e) => {
-          e.preventDefault();
-
+          
           /* Nav Link and Submenu */
           const navLink = item.children[0];
           const submenu = item.children[1];
           
+
           /* Checks if clicked element is equals to navlinl */
           if (e.target == navLink)
-            return submenu.classList.toggle('submenu--show');
+            e.preventDefault();
+
+             if (window.innerWidth <= 800) 
+              return submenu.classList.toggle('submenu--show');
 
         });
       }

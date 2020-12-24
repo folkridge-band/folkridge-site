@@ -3954,6 +3954,7 @@ nav .submenu {
 nav .submenu .submenu-item__link {
   color: var(--primary);
   font-size: 1rem;
+  display: block;
 }
 nav .submenu .submenu-item {
   padding: 10px;
