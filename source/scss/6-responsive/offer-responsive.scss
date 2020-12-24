@@ -1,0 +1,44 @@
+@media #{$device-xs}{
+
+  
+}
+
+@media #{$device-lg}{
+
+  .offer__items {
+    width:100vw;
+  }
+}
+
+@media #{$device-md} {
+
+  .offer-item__title-container {
+    background: var(--primary);
+    padding: 10px;
+    position: absolute;
+    width: 100px;
+    bottom: -18px;
+    right: 12px;
+    .offer-item__title{
+      font-size:1rem;
+    }
+  }
+
+    .offer-item__container {
+      width: 86% !important;
+  }
+
+}
+
+@media #{$device-sm} {
+
+}
+
+@media only screen and (max-width:600px){
+  .offer__items{
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+  }
+}

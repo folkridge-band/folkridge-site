@@ -1,0 +1,27 @@
+/* Hero */
+
+.hero__container{
+  height:350px;
+  background-position: center center!important;
+  background-size:cover !important;
+}
+
+.hero__content{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items:center;
+  height:100%;
+}
+
+
+.hero__heading{
+  color:var(--white);
+  text-align:center;
+  max-width:750px;
+  font-size:2.5rem;
+}
+
+
+
+/* End Hero */

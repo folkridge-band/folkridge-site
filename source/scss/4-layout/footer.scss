@@ -1,0 +1,74 @@
+// Code footer css here
+footer{
+  background-color:var(--primary);
+  padding-bottom: 80px;
+  background: url(../images/bluegrass-instruments.svg) center 60px no-repeat,
+              var(--primary);
+}
+
+.footer-heading{
+  color:var(--white);
+  margin: 30px 0 0 0;
+  text-align: center;
+}
+
+.footer-social-media__container{
+  max-width: 400px;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+  margin-top:30px;
+}
+
+.footer-social-media__link{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:var(--accent);
+  display:inline-block;
+  position:relative;
+
+  &:hover{
+    box-shadow: inset 0 0 0 3px var(--white);
+  }
+
+  .footer-social-media__icon{
+    position:absolute;
+    color:var(--white);
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size:1.5rem;
+  }
+}
+
+.footer__bottom{
+  margin-top:50px;
+
+  .footer-copyright{
+    color:var(--white);
+  }
+
+  .crumbs{
+     display:flex;
+     justify-content: flex-end;
+    
+    .crumbs__item{
+      margin-left:80px;
+    }
+
+    .crumbs__link{
+      color:var(--white);
+
+      &:hover{
+        color:var(--accent);
+      }
+    }
+
+    .crumbs:not(:last-of-type):after{
+      content: '|';
+      margin: 0 5px;
+      color:var(--white);
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.ribbon{
+   width:max-content;
+   padding: 10px 20px;
+   position:relative;
+   background:var(--primary);
+   margin:30px auto 0 auto;
+
+   h2{
+     font-size:2.3rem;
+
+     @media #{$device-md}{
+       font-size:1.5rem;
+     }
+   }
+}
+
+.ribbon:before,
+.ribbon:after {
+  content: "";
+  bottom: 0;
+  position: absolute;
+  display: block;
+  border: 33px solid var(--primary);
+  z-index: -2;
+
+   @media #{$device-md}{
+       border: 25px solid var(--primary);
+     }
+}
+
+.ribbon:before {
+  left: -40px;
+  border-left-color: transparent;
+}
+
+.ribbon:after {
+  right: -40px;
+  border-right-color: transparent;
+}

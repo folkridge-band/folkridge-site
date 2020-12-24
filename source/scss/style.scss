@@ -1,0 +1,41 @@
+
+@import '1-vendor/themename';
+@import '1-vendor/variables';
+/* @import '1-vendor/bootstrap'; */
+
+@import '1-vendor/reset';
+
+@import '2-base/functions';
+@import '2-base/mixins';
+@import '2-base/typography';
+@import '2-base/colors';
+@import '2-base/placeholders';
+@import '2-base/functions';
+@import '2-base/animations';
+
+@import '3-framework/breakpoint.scss';
+@import '3-framework/grid.scss';
+@import '3-framework/spacing.scss';
+@import '3-framework/spacing-10s.scss';
+@import '3-framework/wrappers.scss';
+@import '3-framework/layout.scss';
+
+@import '4-layout/default-structure';
+@import '4-layout/header';
+@import '4-layout/custom';
+@import '4-layout/content';
+@import '4-layout/footer';
+@import '4-layout/hero';
+@import '4-layout/offer';
+@import '4-layout/about';
+@import '4-layout/featured-images';
+
+@import '5-modules/buttons.scss';
+@import '5-modules/slider.scss';
+@import '5-modules/ribbon.scss';
+
+@import '6-responsive/footer-responsive.scss';
+@import '6-responsive/header-responsive.scss';
+@import '6-responsive/hero-responsive.scss';
+@import '6-responsive/offer-responsive.scss';
+

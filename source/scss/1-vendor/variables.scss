@@ -1,0 +1,97 @@
+$theme-defaults: (
+  /* Colors */
+  'Colors' : (
+    "primary": #2F0F11,
+    "accent": #DD8527,
+
+    // Semantics
+    "success": #9FD356,
+    "danger": #960200,
+    "warning": #EDA921,
+    "info": #0074D9,
+
+    // Gray Scale
+    "white": #ffffff,
+    "silver": #dddddd,
+    "gray": #aaaaaa,
+    "dark": #333333,
+    "medium-dark": #4d4d4d,
+    "lightbrown": #FFF0E5,
+    "black": #111111,
+
+    "light": #ffffff,
+    "green": #228B22
+  ),
+
+  // Font Weights
+  'Font weights' :(
+    'thin': 100,
+    'light': 300,
+    'normal': 400,
+    'semibold': 500,
+    'bold': 700,
+    'black': 900
+  ),
+  
+);
+
+
+//Font Families
+/* Import */
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+$sans-serif: "Lato", Helvetica, Verdana, sans-serif;
+$serif: 'Arvo', "Times New Roman", serif;
+$mono: "Source Code Pro", Courier, mono;
+
+//Media queries
+// Note: 
+// Max <   Min >
+
+// $device-lg: "only screen and (min-width: 1366px)";
+$device-lg: "only screen and (max-width: 1366px)";
+$device-md-between: "(min-width: 768px) and (max-width: 979px)";
+$device-md: "only screen and (max-width: 1024px)";
+$device-sm: "only screen and (max-width: 800px)";
+$device-xs: "only screen and (max-width: 480px)";
+
+
+$breakpoints: (default:0,
+  xs:400px,
+  sm:576px,
+  md:767px,
+  lg:979px,
+  xl:1200px);
+
+
+.pink{
+  background:pink;
+}
+
+
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+/* Looping for CSS Custom properties */
+@mixin createCSSThemeProperties($theme-defaults){
+  /* Declares css properties in the root element of html */
+  :root {
+    @each $group-name, $group in $theme-defaults {
+      /*#{$group-name} */
+      @each $name, $value in $group{
+        --#{$name}: #{$value}
+      }
+      
+      @if($group-name == 'Colors'){
+        /*RGB values for colors */
+        @each $name, $value in $group{
+        --#{$name}-rgb: #{hexToRGB($value)};
+      }
+      }
+
+    }
+  } 
+}
+
+@include createCSSThemeProperties($theme-defaults);

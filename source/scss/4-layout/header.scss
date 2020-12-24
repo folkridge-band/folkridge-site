@@ -1,0 +1,143 @@
+
+/* Header */
+header{
+  background:var(--primary);
+  position:relative;
+}
+
+.burger{
+  display:none;
+}
+
+.logo__container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  padding: 0.75rem 0;
+
+  .logo-img__container{
+    display:block;
+
+    .logo-img {
+      width: 130px;
+      margin:0 auto;
+    }
+  }
+
+
+  .logo-text {
+    font-size: 2rem;
+    color: var(--white);
+    font-family: $serif;
+    font-weight: 600;
+    margin:10px 0 0 0;
+    letter-spacing:1px;
+  }
+
+}
+
+.logo__wrapper{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav{
+  border-top:3px solid var(--accent);
+  border-bottom:3px solid var(--accent);
+  width:100%;
+
+  .nav-list{
+    display:flex;
+    justify-content:center;
+   
+
+    .nav-list__item{
+      margin:20px 0 0 0;
+      padding:0 20px;
+      display:flex;
+      align-items:center;
+      flex-direction:column;
+      height:100%;
+      align-self: center;
+      cursor:pointer;
+      transition: all 0.3s var(--anim-primary);
+      position:relative;
+
+       &:hover > .nav-link{
+         color:var(--accent);
+       }
+       &:hover:after {
+         border-left: 6px solid transparent;
+         border-right: 6px solid transparent;
+         border-bottom: 12px solid var(--accent);
+       }
+
+       &::after{
+          content: '';
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-bottom: 12px solid transparent;
+           transition: all 0.3s var(--anim-primary);
+       }
+    }
+  }
+
+  .nav-link{
+    color:var(--white);
+    font-family:$serif;
+    font-size:1.25rem;
+    flex-grow:1;
+  }
+
+  .submenu{
+    background:var(--lightbrown);
+    position:absolute;
+    width:150%;
+    list-style: none;
+    top:30px;
+    visibility:hidden;
+    opacity:0;
+    transition: opacity 0.3s var(--anim-primary);
+    box-shadow: 1px 1px 4px #888888;
+
+    .submenu-item__link{
+      color:var(--primary);
+      font-size:1rem;
+    }
+    .submenu-item{
+      padding: 10px;
+    }
+  }
+
+}
+
+/* Burger */
+.burger{
+  cursor:pointer;
+}
+.nav-close{
+  display:none !important;
+}
+
+/* Hover */
+.nav-list__item:hover > .submenu{
+   visibility:visible;
+   opacity:1;
+}
+
+.submenu-item:hover{
+  background:var(--accent);
+}
+
+/* Header Effect */
+.header--fixed{
+  position: fixed;
+  top: 0;
+  z-index: 5000;
+  width: 100%;
+}

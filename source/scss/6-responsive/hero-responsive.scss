@@ -1,0 +1,12 @@
+/* Hero Responsive */
+
+@media #{$device-sm}{
+  .hero__heading{
+    padding:0 20px;
+    font-size:1.25rem;
+  }
+
+  .hero__container{
+    height:200px;
+  }
+}

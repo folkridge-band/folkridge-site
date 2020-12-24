@@ -1,0 +1,66 @@
+/* Footer Responsive */
+@media #{$device-lg} {
+  .crumbs__item {
+    margin-left: 60px !important;
+  }
+ 
+}
+
+@media #{$device-md} {
+  .footer__bottom{
+    flex-direction: column;
+    justify-content:center; 
+    align-items:center;
+  }
+
+  .crumbs__item {
+    margin:0 !important;
+  }
+
+  .crumbs{
+    justify-content:space-around !important;
+    margin-top:40px;
+  }
+
+  .footer-copyright{
+    text-align:center;
+  }
+
+  footer {
+    background: url(../images/bluegrass-instruments.svg) center 155px no-repeat,
+      var(--primary);
+     background-size:600px;
+  }
+
+}
+
+@media only screen and (max-width:560px) {
+
+  .footer-social-media__container{
+    width:75%;
+  }
+
+  .footer-social-media__link{
+
+    .footer-social-media__icon{
+      font-size:1.25rem;
+    }
+  }
+  
+  .crumbs{
+    flex-wrap:wrap;
+  }
+
+  .crumbs__link{
+    font-size:0.875rem;
+  }
+
+  footer {
+    background: url(../images/bluegrass-instruments.svg) center 110% no-repeat,
+      var(--primary);
+
+    background-size:80%;
+   
+  }
+
+}

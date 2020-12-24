@@ -1,0 +1,4 @@
+
+.btn-accent {
+  @include btn-background(color('accent'));
+}
