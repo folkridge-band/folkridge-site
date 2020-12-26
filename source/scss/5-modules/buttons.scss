@@ -3,6 +3,10 @@
   @include btn-background(color('accent'));
 }
 
+.btn-ghost__accent {
+  @include btn-border(color('accent'));
+}
+
 
 .btn-round__accent{
   width:42px;

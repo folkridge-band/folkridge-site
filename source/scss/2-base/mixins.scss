@@ -22,6 +22,20 @@
 }
 
 
+@mixin btn-border($color){
+  @extend %btn-ghost;
+  color:$color;
+  border: 2px solid $color;
+
+  &:active{
+    background:darken($color, 15%);
+    transition: all 0.3s ease;
+    color:darken(#fff, 5%);
+  }
+
+}
+
+
 //Media query to stack Elements
 //Pass in the Media query here
 @mixin media-stack-elements($media-query){

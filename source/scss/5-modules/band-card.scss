@@ -55,7 +55,7 @@
   object-fit: cover;
 
   @media only screen and (max-width: 768px) {
-   width:60%;
+   width:70% !important;
   }
  }
  
@@ -96,6 +96,10 @@
    flex-direction: column;
   }
 
+  @media only screen and (max-width: 768px) {
+   padding:60px 0 0 0;
+  }
+
   p{
      @media only screen and (max-width:520px){
       display:none;
@@ -129,19 +133,16 @@
   }
 
    @media only screen and (max-width: 768px) {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(48px, 3fr));
-    justify-items: center;
-    margin-top:24px;
+    display:flex;
+    justify-content: center;
+    margin-top:6px;
     margin-left:auto;
     margin-right:auto;
     gap:14px 0;
-    width:100%;
 
      a{
-        &:not(:first-of-type){
-       margin-left:0;
-      }
+       margin-left:15px;
+       margin-right:15px;
      }
    }
 }
