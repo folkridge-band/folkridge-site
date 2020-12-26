@@ -18,6 +18,14 @@
     h4{
      color:var(--primary) !important;
     }
+
+    .band-card__social-media{
+      a{
+        &:hover{
+          box-shadow: inset 0 0 0 3px var(--primary);
+        }
+      }
+    }
   }
 
   &:not(:first-of-type){

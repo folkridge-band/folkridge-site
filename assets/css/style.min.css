@@ -4675,6 +4675,9 @@ footer {
 .band-card:nth-child(even) h4 {
   color: var(--primary) !important;
 }
+.band-card:nth-child(even) .band-card__social-media a:hover {
+  box-shadow: inset 0 0 0 3px var(--primary);
+}
 .band-card:not(:first-of-type) {
   margin-top: 40px;
 }
