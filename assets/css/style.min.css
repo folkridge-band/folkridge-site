@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap);/*
+@import url(https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap);@charset "UTF-8";
+/*
 Theme Name: Folk Ridge
 Author: Ralph Samaniego
 */
@@ -23,6 +24,7 @@ Author: Ralph Samaniego
   --dark: #333333 ;
   --medium-dark: #4d4d4d ;
   --lightbrown: #FFF0E5 ;
+  --vanilla-brown: #FBF9FA ;
   --black: #111111 ;
   --light: #ffffff ;
   --green: #228B22 ;
@@ -39,6 +41,7 @@ Author: Ralph Samaniego
   --dark-rgb: 51, 51, 51;
   --medium-dark-rgb: 77, 77, 77;
   --lightbrown-rgb: 255, 240, 229;
+  --vanilla-brown-rgb: 251, 249, 250;
   --black-rgb: 17, 17, 17;
   --light-rgb: 255, 255, 255;
   --green-rgb: 34, 139, 34;
@@ -461,6 +464,10 @@ p {
 
 .hex-lightbrown {
   color: #FFF0E5 !important;
+}
+
+.hex-vanilla-brown {
+  color: #FBF9FA !important;
 }
 
 .hex-black {
@@ -4483,6 +4490,36 @@ footer {
   box-shadow: 0 0 0 2px transparent, 0 0 0 3px #DD8527;
 }
 
+.btn-round__accent {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  position: relative;
+}
+.btn-round__accent:hover {
+  box-shadow: inset 0 0 0 3px var(--white);
+}
+.btn-round__accent i {
+  position: absolute;
+  color: var(--white);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+@media (max-width: 1024px) {
+  .btn-round__accent {
+    width: 36px;
+    height: 36px;
+    margin-top: 12px;
+  }
+  .btn-round__accent i {
+    font-size: 1.1rem;
+  }
+}
+
 .band-swiper, .swiper-container {
   width: 80%;
   max-width: 600px;
@@ -4591,6 +4628,145 @@ footer {
 .ribbon:after {
   right: -40px;
   border-right-color: transparent;
+}
+
+.band-card {
+  display: flex;
+  box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.75);
+}
+.band-card:nth-child(odd) {
+  background: var(--primary);
+  color: var(--white) !important;
+}
+.band-card:nth-child(odd) h4 {
+  color: var(--white) !important;
+}
+.band-card:nth-child(even) {
+  background: var(--vanilla-brown);
+  color: var(--primary) !important;
+}
+.band-card:nth-child(even) h4 {
+  color: var(--primary) !important;
+}
+.band-card:not(:first-of-type) {
+  margin-top: 40px;
+}
+@media only screen and (max-width: 768px) {
+  .band-card {
+    padding-top: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.band-card__info-part {
+  padding: 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.band-card__img-container {
+  max-width: 318px;
+  width: 100%;
+  height: auto;
+  flex: 1;
+  display: inherit;
+}
+.band-card__img-container .band-card__img {
+  width: 100%;
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (max-width: 768px) {
+  .band-card__img-container .band-card__img {
+    width: 60%;
+  }
+}
+
+.band-card__instruments {
+  display: inline-flex;
+  margin-top: 4px;
+}
+@media only screen and (max-width: 768px) {
+  .band-card__instruments .band-card__instrument-item {
+    white-space: nowrap;
+  }
+}
+
+.band-card__instruments li + li:before {
+  padding: 5px;
+  content: "/\A0";
+}
+
+.band-card__info__row-one {
+  justify-content: space-between;
+}
+@media only screen and (max-width: 1024px) {
+  .band-card__info__row-one {
+    flex-direction: column;
+  }
+}
+
+.band-card__info__row-two {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+@media only screen and (max-width: 1024px) {
+  .band-card__info__row-two {
+    padding: 36px 0 20px 0;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .band-card__info__row-two p {
+    display: none;
+  }
+}
+.band-card__info__row-two .band-card__btn {
+  display: none;
+}
+@media only screen and (max-width: 520px) {
+  .band-card__info__row-two .band-card__btn {
+    display: block;
+  }
+}
+
+.band-card__social-media a:not(:first-of-type) {
+  margin-left: 16px;
+}
+@media only screen and (max-width: 1024px) {
+  .band-card__social-media a:not(:first-of-type) {
+    margin-left: 8px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .band-card__social-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(48px, 3fr));
+    justify-items: center;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 14px 0;
+    width: 100%;
+  }
+  .band-card__social-media a:not(:first-of-type) {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .band-card__info-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 /* Footer Responsive */

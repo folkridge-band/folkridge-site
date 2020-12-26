@@ -1,0 +1,157 @@
+.band-card{
+ display:flex;
+ box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.75);
+ 
+  &:nth-child(odd){
+    background:var(--primary);
+    color:var(--white) !important;
+
+    h4{
+     color:var(--white) !important;
+    }
+  }
+
+  &:nth-child(even){
+    background:var(--vanilla-brown);
+    color: var(--primary) !important;
+
+    h4{
+     color:var(--primary) !important;
+    }
+  }
+
+  &:not(:first-of-type){
+   margin-top:40px;
+  }
+
+  @media only screen and(max-width:768px){
+   padding-top:30px;
+   flex-direction: column;
+   justify-content:center;
+   align-items: center;
+  }
+  
+}
+
+  
+
+.band-card__info-part{
+ padding:40px;
+ flex:1;
+ display:flex;
+ flex-direction: column;
+}
+
+.band-card__img-container{
+ max-width:318px;
+ width:100%;
+ height:auto;
+ flex:1;
+ display:inherit;
+
+ .band-card__img{
+  width:100%;
+  margin:0 auto;
+  object-fit: cover;
+
+  @media only screen and (max-width: 768px) {
+   width:60%;
+  }
+ }
+ 
+}
+
+.band-card__instruments{
+ display:inline-flex;
+ margin-top:4px;
+
+  .band-card__instrument-item{
+    @media only screen and (max-width: 768px) {
+     white-space: nowrap;
+    }
+  }
+ }
+
+.band-card__instruments li+li:before{
+    padding: 5px;
+    content: "/\00a0";
+}
+
+.band-card__info__row-one{
+ justify-content: space-between;
+
+ @media #{$device-md}{
+  flex-direction: column;
+ }
+}
+
+.band-card__info__row-two{
+  height:100%;
+  display:flex;
+  align-items: center;
+  padding:20px 0;
+
+  @media #{$device-md}{
+   padding:36px 0 20px 0;
+   flex-direction: column;
+  }
+
+  p{
+     @media only screen and (max-width:520px){
+      display:none;
+     }
+  }
+
+  .band-card__btn{
+   display:none;
+
+    @media only screen and (max-width:520px){
+      display:block;
+     }
+  }
+
+}
+
+.band-card__social-media{
+
+  a{
+     &:not(:first-of-type){
+    margin-left:16px;
+   }
+  }
+
+  @media #{$device-md}{
+    a{
+      &:not(:first-of-type){
+     margin-left:8px;
+    }
+   }
+  }
+
+   @media only screen and (max-width: 768px) {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(48px, 3fr));
+    justify-items: center;
+    margin-top:24px;
+    margin-left:auto;
+    margin-right:auto;
+    gap:14px 0;
+    width:100%;
+
+     a{
+        &:not(:first-of-type){
+       margin-left:0;
+      }
+     }
+   }
+}
+
+
+.band-card__info-heading{
+  @media only screen and(max-width:768px){
+   display:flex;
+   justify-content:center;
+   align-items: center;
+   flex-direction: column;
+  }
+}
