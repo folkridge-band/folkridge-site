@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap);@charset "UTF-8";
-/*
+@import url(https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap);/*
 Theme Name: Folk Ridge
 Author: Ralph Samaniego
 */
@@ -4722,6 +4721,10 @@ footer {
 .band-card__instruments {
   display: inline-flex;
   margin-top: 4px;
+  opacity: 0.6;
+}
+.band-card__instruments .band-card__instrument-item {
+  font-weight: 600px;
 }
 @media only screen and (max-width: 768px) {
   .band-card__instruments .band-card__instrument-item {
@@ -4730,8 +4733,8 @@ footer {
 }
 
 .band-card__instruments li + li:before {
-  padding: 5px;
-  content: "/\A0";
+  padding: 3px 4px 4px 4px;
+  content: "|";
 }
 
 .band-card__info__row-one {

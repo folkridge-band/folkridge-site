@@ -69,8 +69,11 @@
 .band-card__instruments{
  display:inline-flex;
  margin-top:4px;
+ opacity:0.6;
+ 
 
   .band-card__instrument-item{
+    font-weight:600px;
     @media only screen and (max-width: 768px) {
      white-space: nowrap;
     }
@@ -78,8 +81,8 @@
  }
 
 .band-card__instruments li+li:before{
-    padding: 5px;
-    content: "/\00a0";
+    padding: 3px 4px 4px 4px;
+    content: "\007C";
 }
 
 .band-card__info__row-one{
