@@ -29,6 +29,11 @@
    flex-direction: column;
    justify-content:center;
    align-items: center;
+   box-shadow: 0 0 0;
+   &:not(:first-of-type){
+    margin-top:0;
+    border-top: 2px solid var(--accent);
+   }
   }
   
 }

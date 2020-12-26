@@ -4445,6 +4445,7 @@ footer {
 }
 .about-page__list .about-page__link--current {
   font-weight: bold;
+  border-bottom: 3px solid var(--accent);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -4684,6 +4685,11 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 0;
+  }
+  .band-card:not(:first-of-type) {
+    margin-top: 0;
+    border-top: 2px solid var(--accent);
   }
 }
 
@@ -4808,7 +4814,7 @@ footer {
   transform: translate(-50%, -50%);
   width: 600px;
   max-width: 86%;
-  height: 480px;
+  height: 460px;
   max-height: 100%;
   z-index: 1001;
   overflow: hidden;
@@ -4843,7 +4849,7 @@ footer {
 }
 .modal .modal-guts .modal-content {
   margin: 20px 30px;
-  width: 88%;
+  width: 86%;
 }
 
 .modal-overlay {
@@ -4854,6 +4860,11 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba(var(--black-rgb), 0.8);
+}
+
+.modal--hide {
+  display: none;
+  cursor: pointer;
 }
 
 /* Footer Responsive */
