@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap);/*
+@import url(https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap);@charset "UTF-8";
+/*
 Theme Name: Folk Ridge
 Author: Ralph Samaniego
 */
@@ -19,7 +20,7 @@ Author: Ralph Samaniego
   --info: #0074D9 ;
   --white: #ffffff ;
   --silver: #dddddd ;
-  --gray: #aaaaaa ;
+  --gray: #707070 ;
   --dark: #333333 ;
   --medium-dark: #4d4d4d ;
   --lightbrown: #FFF0E5 ;
@@ -36,7 +37,7 @@ Author: Ralph Samaniego
   --info-rgb: 0, 116, 217;
   --white-rgb: 255, 255, 255;
   --silver-rgb: 221, 221, 221;
-  --gray-rgb: 170, 170, 170;
+  --gray-rgb: 112, 112, 112;
   --dark-rgb: 51, 51, 51;
   --medium-dark-rgb: 77, 77, 77;
   --lightbrown-rgb: 255, 240, 229;
@@ -450,7 +451,7 @@ p {
 }
 
 .hex-gray {
-  color: #aaaaaa !important;
+  color: #707070 !important;
 }
 
 .hex-dark {
@@ -4647,6 +4648,34 @@ footer {
   }
 }
 
+.package__list {
+  list-style-type: decimal;
+}
+
+.package__notes {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.package__notes p, .package__notes ol, .package__notes li {
+  font-size: 20px;
+}
+.package__notes strong {
+  font-size: 21px;
+}
+.package__notes ol {
+  margin: 20px 0 0 9%;
+  width: 68%;
+}
+@media only screen and (max-width: 1024px) {
+  .package__notes ol {
+    width: 90%;
+  }
+}
+.package__notes ol li {
+  margin-top: 6px;
+}
+
 .btn-accent {
   background-color: #DD8527;
   color: #fff;
@@ -5030,6 +5059,80 @@ footer {
 .modal--hide {
   display: none;
   cursor: pointer;
+}
+
+.package-cards {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.package-card {
+  width: 100%;
+  max-width: 318px;
+  box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.4);
+  margin-top: 30px;
+}
+.package-card .package-card__heading {
+  background: var(--primary);
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.package-card .package-card__content {
+  padding: 20px 0;
+  height: 440px;
+  background: var(--vanilla-brown);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.package-card .package-card__content .package-card__price-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.package-card .package-card__content .package-card__price-row .package-card__price {
+  position: relative;
+}
+.package-card .package-card__content .package-card__price-row .package-card__price:before {
+  content: "\20B1";
+  position: absolute;
+  top: 0;
+  left: -18px;
+  font-size: 24px;
+}
+.package-card .package-card__content .package-card__price-row .package-card__gig-word {
+  margin-left: 6px;
+  margin-top: 12px;
+}
+.package-card .package-card__content .package-card__price-row .package-card__gig-word:before {
+  content: "/";
+}
+
+.package-inclusions {
+  margin: 24px auto 0 auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.package-inclusions .package-inclusion__item {
+  padding: 8px 0;
+}
+.package-inclusions .package-inclusion__item i {
+  margin-right: 8px;
+}
+
+.package-card__description {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 6px;
 }
 
 /* Footer Responsive */

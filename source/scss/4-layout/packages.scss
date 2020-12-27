@@ -1,0 +1,29 @@
+.package__list{
+ list-style-type: decimal;
+}
+
+.package__notes{
+ width:90%;
+ max-width:1100px;
+ margin:0 auto;
+ 
+ p,ol,li{
+  font-size: 20px;
+ }
+
+ strong{
+  font-size:21px;
+ }
+
+ ol{
+  margin:20px 0 0 9%;
+  width:68%;
+  @media #{$device-md}{
+   width:90%;
+  }
+
+  li{
+   margin-top:6px;
+  }
+ }
+}
