@@ -4452,6 +4452,13 @@ footer {
     justify-content: center;
   }
 }
+.page-title {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 20px auto;
+}
+
 .history__image {
   width: 90%;
   max-width: 550px;
@@ -4488,6 +4495,158 @@ footer {
     width: 100%;
   }
 }
+.form__container {
+  padding: 60px 0;
+}
+@media only screen and (max-width: 999px) {
+  .form__container {
+    flex-direction: column-reverse;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.form__fields {
+  background: var(--vanilla-brown);
+  /* Select */
+}
+.form__fields form {
+  margin: 50px 40px 20px 40px;
+}
+.form__fields .form__two-col {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 999px) {
+  .form__fields .form__two-col {
+    flex-direction: column;
+  }
+}
+.form__fields label {
+  font-size: clamp(24px, 4vw, 31px);
+  color: var(--primary);
+  display: block;
+  font-family: "Arvo", "Times New Roman", serif;
+  font-weight: 600;
+}
+.form__fields input, .form__fields textarea, .form__fields select, .form__fields option {
+  font-size: clamp(16px, 4vw, 18px);
+  color: var(--black);
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #707070;
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+.form__fields input:focus, .form__fields textarea:focus, .form__fields select:focus, .form__fields option:focus {
+  outline: 0 !important;
+  box-shadow: 0 0 0 2px transparent, 0 0 0 2px var(--accent);
+}
+.form__fields option {
+  padding: 6px 0;
+}
+.form__fields optgroup {
+  font-size: clamp(18px, 4vw, 20px);
+}
+.form__fields .form-input__name, .form__fields .form-input__inquiry {
+  width: 48%;
+}
+@media only screen and (max-width: 999px) {
+  .form__fields .form-input__name, .form__fields .form-input__inquiry {
+    width: 100%;
+  }
+}
+.form__fields .form-input__email, .form__fields .form-input__message {
+  width: 100%;
+}
+.form__fields .custom-select {
+  position: relative;
+}
+.form__fields .custom-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background: var(--primary);
+  height: 100%;
+  width: 4rem;
+  pointer-events: none;
+}
+.form__fields .custom-arrow::after {
+  --size:0.7rem;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.form__fields .custom-arrow::after {
+  border-top: var(--size) solid var(--accent);
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  top: 50%;
+}
+
+.form__design {
+  background: var(--primary);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+@media only screen and (max-width: 999px) {
+  .form__design {
+    flex-direction: row;
+    height: 160px;
+  }
+}
+.form__design .form__design-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  margin: 60px 0 20px -48px;
+}
+@media only screen and (max-width: 999px) {
+  .form__design .form__design-img {
+    margin: 0 0 0 0;
+    justify-content: flex-start;
+  }
+  .form__design .form__design-img img {
+    width: 65%;
+    transform: rotate(9deg);
+    margin-top: 22%;
+  }
+}
+@media only screen and (max-width: 999px) {
+  .form__design .form__design-img img {
+    margin-top: 7%;
+  }
+}
+.form__design img {
+  width: 100%;
+  height: auto;
+}
+.form__design .form__design-mountain {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  align-self: flex-end;
+}
+@media only screen and (max-width: 999px) {
+  .form__design .form__design-mountain {
+    width: 32% !important;
+  }
+}
+
 .btn-accent {
   background-color: #DD8527;
   color: #fff;
@@ -4717,7 +4876,7 @@ footer {
 }
 @media only screen and (max-width: 768px) {
   .band-card__img-container .band-card__img {
-    width: 70% !important;
+    width: 55% !important;
   }
 }
 

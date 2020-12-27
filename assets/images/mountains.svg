@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="412.744" height="222.575" viewBox="0 0 412.744 222.575">
+  <g id="Mountain_Group" data-name="Mountain Group" transform="translate(-164.577 -640.071)">
+    <g id="Mountain">
+      <path id="Path_33" data-name="Path 33" d="M145.282,819.912,285.1,686.747l71.338,40.9-67.533,92.264Z" transform="translate(19.295 41.783)" fill="#e9bb9a"/>
+      <path id="Path_34" data-name="Path 34" d="M285.1,686.747l64.68,37.1-43.754,31.18,10.463-21.335-40.9,27.023L297.47,728l-64.68,45.514-.951-18.282-45.656,32.34Z" transform="translate(20.345 41.783)" fill="#fff"/>
+    </g>
+    <g id="Mountain_2" data-name="Mountain 2">
+      <path id="Path_38" data-name="Path 38" d="M558.092,820.863l-269.5-.951L446.329,599.258,558.092,749.525Z" transform="translate(19.229 41.783)" fill="#e9bb9a"/>
+      <path id="Path_39" data-name="Path 39" d="M498.729,671.614l-1.322,2.406-23.018,41.814L458.218,687.4,420.171,751.17l-7.609-39.949-79.8,45.951L445.853,598.288Z" transform="translate(19.229 41.783)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
