@@ -11,7 +11,7 @@ plugins:
 
 strapi:  
     # Your API endpoint (optional, default to http://localhost:1337)
-    endpoint: https://strapi-rap.herokuapp.com
+    endpoint: https://strapi-folkridge.herokuapp.com
     collections:
         # Example for a "posts" collection
         posts:
