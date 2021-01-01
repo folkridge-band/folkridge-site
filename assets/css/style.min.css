@@ -4905,8 +4905,6 @@ footer {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 @media only screen and (max-width: 768px) {
   .band-card__img-container {
