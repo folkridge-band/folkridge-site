@@ -19,3 +19,16 @@ strapi:
             type: posts
             # Permalink used to generate the output files (eg. /posts/:id).
             permalink: /posts/:slug/
+        pages:
+          type: pages
+
+        bandmembers:
+          type: bandmembers
+        instruments:
+          type: instruments
+        packages:
+          type: packages
+        socials:
+          type: socials
+
+          
