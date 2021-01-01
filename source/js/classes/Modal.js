@@ -33,8 +33,7 @@ class Modal{
   bindClose(){
    this.modalClose.addEventListener('click', (e)=> {
      e.preventDefault();
-
-    if(e.target.classList.contains('modal--close')){
+    if(e.target.classList.contains('modal-close')){
      this.modal.classList.add('modal--hide');
      this.modalOverlay.classList.add('modal--hide');
     }

@@ -4270,6 +4270,10 @@ footer {
   background: var(--accent);
 }
 
+.featured-image__asset {
+  cursor: pointer;
+}
+
 .featured-image__crosswise-container {
   width: 100%;
   height: 210px;
@@ -4404,6 +4408,7 @@ footer {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background: var(--accent);
 }
 .featured-image__button:after {
   content: "" !important;
@@ -5098,8 +5103,10 @@ footer {
   top: 0;
   left: 0;
   width: 90%;
-  height: 80vh;
-  margin: 0 auto;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 20px auto;
   display: flex;
   justify-content: center;
   align-items: center;

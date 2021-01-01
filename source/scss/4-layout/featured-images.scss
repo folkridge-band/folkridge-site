@@ -19,6 +19,10 @@ img{
  }
 }
 
+.featured-image__asset{
+  cursor:pointer;
+}
+
 .featured-image__crosswise-container{
  width:100%;
  height: 210px;
@@ -165,6 +169,7 @@ img{
   justify-content:center;
   align-items: center;
   cursor:pointer;
+  background:var(--accent);
 
   &:after{
     content:'' !important;
