@@ -7,7 +7,20 @@ layout: about
 
 <div class="band-card__container container mb-40 mt-40">
   
-  {% include snippet/band-card.html %}
+  {%- if strapi.collections.bandmembers.size > 0 -%}
+    
+    {% assign sorted_members = strapi.collections.bandmembers | sort: "id" %}
+    {%- for member in sorted_members -%}
+    
+      {%- if member.membership_type == 'main' -%}
+
+        {% include snippet/band-card.html %}
+
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  
   {% include snippet/modal.html %}
 
 </div>
