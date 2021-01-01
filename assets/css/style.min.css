@@ -4895,6 +4895,9 @@ footer {
   height: auto;
   flex: 1;
   display: inherit;
+  /* @media only screen and (max-width: 768px) {
+   object-fit:contain;
+  } */
 }
 @media only screen and (max-width: 768px) {
   .band-card__img-container {
@@ -4905,12 +4908,6 @@ footer {
   width: 100%;
   height: auto;
   margin: 0 auto;
-}
-@media only screen and (max-width: 768px) {
-  .band-card__img-container {
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
 }
 
 .band-card__instruments {
