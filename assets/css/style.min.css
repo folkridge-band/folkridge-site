@@ -4904,6 +4904,7 @@ footer {
 }
 .band-card__img-container .band-card__img {
   width: 100%;
+  height: auto;
   margin: 0 auto;
   -o-object-fit: cover;
      object-fit: cover;
