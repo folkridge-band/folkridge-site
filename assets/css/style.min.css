@@ -4900,6 +4900,7 @@ footer {
 @media only screen and (max-width: 768px) {
   .band-card__img-container {
     width: 35% !important;
+    max-width: 100%;
   }
 }
 .band-card__img-container .band-card__img {
