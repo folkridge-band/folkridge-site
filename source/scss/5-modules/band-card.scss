@@ -57,8 +57,9 @@
 
 .band-card__img-container{
  width:100%;
+ max-width:318px;
  height:auto;
- display:inherit;
+ display:inherit; /* This stretches the width so make sure to add display: inline-block in media query */
 
   @media only screen and (max-width: 768px) {
    width:35% !important;
@@ -69,11 +70,9 @@
   width:100%;
   height:auto;
   margin:0 auto;
+  object-fit:cover;
  }
 
-  /* @media only screen and (max-width: 768px) {
-   object-fit:contain;
-  } */
  
 }
 
