@@ -71,6 +71,10 @@
   margin:0 auto;
   object-fit: cover;
  }
+
+  @media only screen and (max-width: 768px) {
+   object-fit:contain;
+  }
  
 }
 

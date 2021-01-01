@@ -4908,6 +4908,12 @@ footer {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media only screen and (max-width: 768px) {
+  .band-card__img-container {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
 
 .band-card__instruments {
   display: inline-flex;
