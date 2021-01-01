@@ -60,9 +60,10 @@
  height:auto;
  display:inherit;
 
-/*   @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
    width:35% !important;
-  } */
+   display:block;
+  }
 
  .band-card__img{
   width:100%;
