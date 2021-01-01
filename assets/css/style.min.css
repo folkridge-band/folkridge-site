@@ -4897,16 +4897,16 @@ footer {
   flex: 1;
   display: inherit;
 }
+@media only screen and (max-width: 768px) {
+  .band-card__img-container {
+    width: 35% !important;
+  }
+}
 .band-card__img-container .band-card__img {
   width: 100%;
   margin: 0 auto;
   -o-object-fit: cover;
      object-fit: cover;
-}
-@media only screen and (max-width: 768px) {
-  .band-card__img-container .band-card__img {
-    width: 55% !important;
-  }
 }
 
 .band-card__instruments {
