@@ -81,11 +81,17 @@
  margin-top:2px;
  opacity:0.7;
  
+ @media only screen and (max-width: 620px) {
+    display:flex !important;
+    justify-content:center;
+    flex-wrap:wrap;
+ }
 
   .band-card__instrument-item{
     font-weight:600px;
     @media only screen and (max-width: 768px) {
      white-space: nowrap;
+     padding-top:3px;
     }
   }
  }

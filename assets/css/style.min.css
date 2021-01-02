@@ -4959,12 +4959,20 @@ footer {
   margin-top: 2px;
   opacity: 0.7;
 }
+@media only screen and (max-width: 620px) {
+  .band-card__instruments {
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
 .band-card__instruments .band-card__instrument-item {
   font-weight: 600px;
 }
 @media only screen and (max-width: 768px) {
   .band-card__instruments .band-card__instrument-item {
     white-space: nowrap;
+    padding-top: 3px;
   }
 }
 
