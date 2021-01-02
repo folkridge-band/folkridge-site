@@ -1,0 +1,11 @@
+<div class="offer-item__container">
+ <a href="#" target="_blank" class="offer-item__img-link">
+  <img src="{{ package.package_image.url }}" alt="Offer 1" title="Offer 1" class="offer-item__img">
+  <div class="offer-item__title-container">
+   <h4 class="offer-item__title">{{ package.name }}</h4>
+  </div>
+ </a>
+ <p class="mt-30 hex-dark">{{ package.description }}</p>
+
+ <a href="{{site.baseurl}}/contact/?band_package={{package.slug}}" target="_blank" class="btn btn-accent mt-30 layout-block__center">Read More</a>
+</div>

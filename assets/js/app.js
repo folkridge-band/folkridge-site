@@ -33,9 +33,13 @@ class Media{
   this.modalImg = document.querySelector('#modalImg');
   this.modalImgSrc = document.querySelector('#modalImgSrc');
   this.modalClose = document.querySelector('#modalClose');
+  this.videoPlay = document.querySelector('#videoPlay');
+  this.videoFeatured = document.querySelector('#videoFeatured');
+  this.videoFeaturedOverlay = document.querySelector('.featured-video__overlay');
 
   /* Automatic */
   this.bindClose();
+  this.playVideo();
  }
 
  //Methods
@@ -74,6 +78,18 @@ class Media{
     this.modalOverlay.classList.add('modal--hide');
    }
 
+  });
+ }
+
+ playVideo(){
+  this.videoPlay.addEventListener('click', (e)=> {
+    e.preventDefault();
+    /* Hides the icon */
+    this.videoFeaturedOverlay.classList.add('featured-video__play--hide');
+
+    /* Plays the video */
+    const videoSrc = `${this.videoFeatured.src}?autoplay=1`;
+    this.videoFeatured.src = videoSrc;
   });
  }
 }

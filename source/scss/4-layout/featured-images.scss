@@ -134,7 +134,7 @@ img{
    justify-content:center;
    align-items: center;
 
-
+   
   }
 
   .featured-video__play{
@@ -155,7 +155,14 @@ img{
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
+     pointer-events:none;
     }
+    
+  }
+
+  .featured-video__play--hide{
+    display:none;
+    pointer-events:none;
   }
 
   iframe{
