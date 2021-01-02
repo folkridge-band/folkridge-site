@@ -5450,7 +5450,7 @@ footer {
 }
 @media only screen and (max-width: 1366px) {
   .offer__items {
-    width: 100vw;
+    width: 90vw;
   }
 }
 @media only screen and (max-width: 1024px) {
