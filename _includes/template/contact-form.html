@@ -1,5 +1,3 @@
-<h1 class="hex-primary page-title">Contact Us </h1>
-
 <div class="container form__container container__flex">
  <div class="form__fields col-lg7 col-sm12">
   <form action="" method="" class="form">
@@ -7,21 +5,21 @@
    <div class="form__two-col">
     <div class="form-group form-input__name">
      <label for="name">Name:</label>
-     <input type="text" name="name" class="mt-10" placeholder="Type name here">
+     <input type="text" name="name" class="mt-10" placeholder="Type name here" required>
     </div>
 
     <div class="form-group form-input__inquiry mt-md-20">
      <label for="inquiry">Inquiry type:</label>
      <div class="custom-select mt-10">
-      <select name="inquiry" id="inquiry" placeholder="Select inquiry">
+      <select name="inquiry" placeholder="Select inquiry" id="inputInquiry" required>
        <option value="">Choose type...</option>
-       <option value="Full Band">Service: Full Band</option>
-       <option value="Quartet">Service: Quartet</option>
-       <option value="Trio">Service: Trio</option>
-       <option value="Custom">Service: Custom</option>
-       <option value="Question">Question</option>
-       <option value="Feedback">Feedback</option>
-       <option value="Others">Others</option>
+       <option value="full_band">Service: Full Band</option>
+       <option value="quartet">Service: Quartet</option>
+       <option value="trio">Service: Trio</option>
+       <option value="custom">Service: Custom</option>
+       <option value="question">Question</option>
+       <option value="feedback">Feedback</option>
+       <option value="others">Others</option>
       </select>
       <span class="custom-arrow"></span>
      </div>
@@ -30,13 +28,13 @@
 
    <div class="form-group form-input__email mt-30 mt-sm-20">
     <label for="email">Email:</label>
-    <input type="email" name="email" class="mt-10" placeholder="Enter your email address" />
+    <input type="email" name="email" class="mt-10" placeholder="Enter your email address" required/>
    </div>
 
    <div class="form-group form-input__message mt-30 mt-sm-20">
     <label for="message">Message: </label>
     <textarea name="message" id="message" cols="30" rows="10" class="mt-10"
-     placeholder="Enter message here ..."></textarea>
+     placeholder="Enter message here ..." required></textarea>
    </div>
 
    <button type="submit" target="_blank" class="btn btn-accent mt-30 mt-sm-20">Send Message</button>

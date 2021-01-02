@@ -565,6 +565,34 @@ p {
     opacity: 1;
   }
 }
+@-webkit-keyframes highlight {
+  0% {
+    box-shadow: 0 0 0 3px transparent, 0 0 0 3px var(--accent);
+  }
+  33% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--accent);
+  }
+  75% {
+    box-shadow: 0 0 0 3px transparent, 0 0 0 3px var(--accent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--accent);
+  }
+}
+@keyframes highlight {
+  0% {
+    box-shadow: 0 0 0 3px transparent, 0 0 0 3px var(--accent);
+  }
+  33% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--accent);
+  }
+  75% {
+    box-shadow: 0 0 0 3px transparent, 0 0 0 3px var(--accent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 var(--accent);
+  }
+}
 .show-element {
   -webkit-animation: show-element 2s;
           animation: show-element 2s;
@@ -572,6 +600,11 @@ p {
 
 :root {
   --anim-primary: cubic-bezier(.04, .71, .96, 1.04);
+}
+
+.input--highlight {
+  -webkit-animation: highlight 4s;
+          animation: highlight 4s;
 }
 
 /* Default Loop for Grid System */

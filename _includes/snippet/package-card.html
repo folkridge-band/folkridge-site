@@ -1,0 +1,39 @@
+<div class="package-card">
+ <div class="package-card__heading">
+  <h4 class="hex-white">{{ package.name }}</h4>
+ </div>
+
+ <div class="package-card__content">
+  <div class="package-card__details">
+
+   <div class="package-card__price-row">
+
+    {% if package.with_price == true %}
+     <h2 class="package-card__price hex-primary">{{ package.price }}</h2>
+     <h5 class="package-card__gig-word hex-primary">gig</h5>
+    {% else %}
+      <h5 class="hex-primary">{{ package.price }}</h5>
+    {% endif %}
+ 
+   </div>
+
+
+
+   <p class="package-card__description">
+    {{ package.meta }}
+   </p>
+
+   <ul class="package-inclusions">
+
+    {% for inclusion in package.inclusion %}
+     <li class="package-inclusion__item">
+      <i class="fas fa-check"></i> 
+      {{inclusion.item}}
+     </li>
+    {% endfor %}
+   </ul>
+  </div>
+
+  <a href="{{site.baseurl}}/contact/?band_package={{package.slug}}" target="_blank" class="btn btn-accent">INQUIRE</a>
+ </div>
+</div>

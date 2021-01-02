@@ -1,3 +1,31 @@
+class Contact{
+ constructor(){
+  this.inputInquiry = document.querySelector('#inputInquiry');
+  /* Automatics */
+  this.params = this.grabParams();
+  this.changeSelectedInput(this.params);
+ }
+
+ //Methods
+ grabParams(){
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const bandPackage = urlParams.get('band_package');
+
+  return bandPackage;
+ }
+
+ changeSelectedInput(params){
+
+  if(params){
+   this.inputInquiry.value = params;
+   this.inputInquiry.classList.add('input--highlight');
+  }
+  
+ }
+
+
+}
 class Media{
  constructor(){
   this.images = document.querySelectorAll('.featured-image__asset');
@@ -272,6 +300,7 @@ window.addEventListener('DOMContentLoaded', (e)=> {
   
  const bandCardContainer = document.querySelector('.band-card__container');
  const mediaContainer = document.querySelector('.media-container');
+ const contactPageTitle = document.querySelector('#contactPageTitle');
 
  if (isInPage(bandCardContainer)) {
   const modal = new Modal();
@@ -281,6 +310,11 @@ window.addEventListener('DOMContentLoaded', (e)=> {
  if (isInPage(mediaContainer)) {
   const media = new Media();
   media.bindOpen();
+ }
+
+ if (isInPage(contactPageTitle)) {
+  const contact = new Contact();
+
  }
 
 });
