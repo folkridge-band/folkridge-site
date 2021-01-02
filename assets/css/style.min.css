@@ -5063,7 +5063,7 @@ footer {
   max-width: 86%;
   height: 460px;
   max-height: 100%;
-  z-index: 1001;
+  z-index: 14001;
   overflow: hidden;
 }
 .modal .modal-close {
@@ -5102,7 +5102,6 @@ footer {
 }
 
 .modal-overlay {
-  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
