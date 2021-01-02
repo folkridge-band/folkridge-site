@@ -5,41 +5,24 @@ layout: about
 
 <!-- History -->
 
-<div class="history-container container container__nowrap">
-  <div class="history__image-container col-lg5 col-md12">
-   <img src="{{ site.baseurl }}/assets/images/band.jpg" alt="Image" title="Image" class="history__image">
-  </div>
+<div class="band-card__container container mb-40 mt-40">
 
-  <div class="history__blurb col-lg7 col-md12 mt-md-20">
-   <p>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet.
-    <br><br>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-    gubergren, no sea.
-    <br><br>
+  {%- if strapi.collections.bandmembers.size > 0 -%}
 
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet.
-    <br><br>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+    {% assign sorted_members = strapi.collections.bandmembers | sort: "id" %}
+      {%- for member in sorted_members -%}
 
-    
-   </p>
-  </div>
+      {%- if member.membership_type == 'reserve' -%}
 
+         <!-- Row band Card -->
+         {% include snippet/band-card.html %}
+         <!-- End Band card -->
+
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+
+  {% include snippet/modal.html %}
 
 </div>
-
-
- <button class="history__button btn btn-accent mt-60 mb-60">DOWNLOAD BAND RESUME</button>

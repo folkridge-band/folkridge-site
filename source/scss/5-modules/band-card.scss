@@ -57,7 +57,7 @@
 
 .band-card__img-container{
  width:100%;
- max-width:318px;
+ max-width:280px;
  height:auto;
  display:inherit; /* This stretches the width so make sure to add display: inline-block in media query */
 
@@ -78,8 +78,8 @@
 
 .band-card__instruments{
  display:inline-flex;
- margin-top:4px;
- opacity:0.6;
+ margin-top:2px;
+ opacity:0.7;
  
 
   .band-card__instrument-item{

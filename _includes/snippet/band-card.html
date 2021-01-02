@@ -4,8 +4,11 @@
       <div class="band-card">
         <!-- 1st col of band card -->
         <div class="band-card__img-container">
-          <img src="{{ member.profile_image.url }}" alt="Band" title="Band" class="band-card__img"
-            loading="lazy">
+          {% if member.profile_image.url %}
+            <img src="{{ member.profile_image.url }}" alt="Band" title="Band" class="band-card__img" loading="lazy">
+          {% else %}
+             <img src="{{site.baseurl}}/assets/images/no_picture.jpg" alt="Band" title="Band" class="band-card__img" loading="lazy">
+          {% endif %}
         </div>
       
         <!-- 2nd col of band card -->
