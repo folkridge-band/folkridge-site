@@ -4,9 +4,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: max-content;
-  height:max-content;
-   z-index: 4001;
+  z-index: 13001;
+  width:max-content;
 
   @media #{$device-md}{
    width:80%;
@@ -19,6 +18,10 @@
     background: var(--danger);
     color:var(--white);
     padding:10px;
+
+    i{
+      pointer-events: none;;
+    }
  }
 
 
@@ -28,8 +31,8 @@
     /* cover the modal */
     top: 0;
     left: 0;
-    width: 90%;
-    height: max-content;
+    width: 600px;
+    max-width:100%;
     margin:20px auto;
     display:flex;
     justify-content:center;
@@ -46,4 +49,18 @@
     }
    
   }
+
+  .modal-content{
+    width:70%;
+    margin:0 auto;
+
+    @media #{$device-sm}{
+     width:86%;
+    }
+  }
+  
+}
+
+.modal-overlay{
+  z-index:13000;
 }

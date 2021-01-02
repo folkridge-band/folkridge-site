@@ -5076,13 +5076,10 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 13001;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  z-index: 4001;
 }
 @media only screen and (max-width: 1024px) {
   .modal-image {
@@ -5097,15 +5094,16 @@ footer {
   color: var(--white);
   padding: 10px;
 }
+.modal-image .modal-close i {
+  pointer-events: none;
+}
 .modal-image .modal-guts {
   /* other stuff we already covered */
   /* cover the modal */
   top: 0;
   left: 0;
-  width: 90%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  width: 600px;
+  max-width: 100%;
   margin: 20px auto;
   display: flex;
   justify-content: center;
@@ -5123,6 +5121,19 @@ footer {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.modal-image .modal-content {
+  width: 70%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 800px) {
+  .modal-image .modal-content {
+    width: 86%;
+  }
+}
+
+.modal-overlay {
+  z-index: 13000;
 }
 
 .package-cards {
