@@ -5,41 +5,29 @@ layout: about
 
 <!-- History -->
 
-<div class="history-container container container__nowrap">
-  <div class="history__image-container col-lg5 col-md12">
-   <img src="{{ site.baseurl }}/assets/images/band.jpg" alt="Image" title="Image" class="history__image">
-  </div>
+{% assign page = strapi.collections.pages | where:"id", "2" | first %}
 
-  <div class="history__blurb col-lg7 col-md12 mt-md-20">
-   <p>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet.
-    <br><br>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-    gubergren, no sea.
-    <br><br>
-
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet.
-    <br><br>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-
+{% for zone in page.zone %}
+  {% if zone.__component == 'section.page-layout' %}
+    <div class="history-container container container__nowrap">
+      <div class="history__image-container col-lg5 col-md12">
+        <img src="{{ zone.image.url }}" alt="Image" title="Image" class="history__image">
+      </div>
     
-   </p>
-  </div>
+      <div class="history__blurb col-lg7 col-md12 mt-md-20">
+        <p>
+          {{ zone.description }}
+    
+        </p>
+      </div>
+    
+    
+    </div>
+  {% endif %}
+
+  {% if zone.__component == 'section.button-center' %}
+    <a href="{{zone.destination_link}}" class="history__button btn btn-accent mt-60 mb-60" target="_blank">VIEW BAND RESUME</a>
+  {% endif %}
 
 
-</div>
-
-
- <button class="history__button btn btn-accent mt-60 mb-60">DOWNLOAD BAND RESUME</button>
+{% endfor %}

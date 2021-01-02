@@ -316,6 +316,7 @@ window.addEventListener('DOMContentLoaded', (e)=> {
   const contact = new Contact();
 
  }
+ 
 
 });
 const navOpen = document.querySelector('#navOpen');

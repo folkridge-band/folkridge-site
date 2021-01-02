@@ -18,5 +18,6 @@ window.addEventListener('DOMContentLoaded', (e)=> {
   const contact = new Contact();
 
  }
+ 
 
 });
