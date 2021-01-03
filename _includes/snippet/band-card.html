@@ -33,23 +33,40 @@
 
                {% if medium.mobile_link %}
                 <script type="text/javascript">
+
+                  let icon = [
+                    {%- for social_info in medium.socials -%}
+                    {{social_info.classname}}
+                    {%- endfor -%}
+                  ]
+
                   if (isMobile()) {
-                    {% assign link = medium.mobile_link %}    
+                    let link = [{{ medium.mobile_link }}];
                   }else{
-                    {% assign link = medium.link %}  
+                    let link = [{{ medium.mobile_link }}];        
                   }
+
+                  let ui = `
+                    <a href="${link}" target="_blank" class="btn-round__accent">
+                      ${icon}
+                    </a>
+                  `;
+
+                  document.write(`${ui}`);
                 </script>
                {% else %}
                   {% assign link = medium.link %}
+
+                  <a href="{{link}}" target="_blank" class="btn-round__accent">
+                    {%- for social_info in medium.socials -%}
+                    {{social_info.classname}}
+                    {%- endfor -%}
+                  </a>
                {% endif %}
 
                
 
-                <a href="{{link}}" target="_blank" class="btn-round__accent">
-                  {%- for social_info in medium.socials -%}
-                    {{social_info.classname}}
-                  {%- endfor -%}
-                </a>
+               
               {%- endfor -%}
             </div>
       
