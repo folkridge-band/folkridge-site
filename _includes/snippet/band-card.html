@@ -32,7 +32,11 @@
 
 
                {% if medium.mobile_link %}
+                
+                <!-- I had to create a custom script tag
+                to get the device screen size from Javascript to display mobile link rather than normal link -->
                 {% include js/mobile_link.html %}
+                
                {% else %}
                   {% assign link = medium.link %}
 
