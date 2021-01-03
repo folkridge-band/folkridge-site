@@ -1,0 +1,23 @@
+<script type="text/javascript">
+
+ if (isMobile()) {
+
+   document.write(`
+   <a href="{{ medium.mobile_link }}" target="_blank" class="btn-round__accent">
+     {% for social_info in medium.socials %}
+       {{social_info.classname}}
+     {% endfor %}
+   </a>
+ `);
+ } else {
+   document.write(`
+   <a href="{{ medium.link }}" target="_blank" class="btn-round__accent">
+     {% for social_info in medium.socials %}
+       {{social_info.classname}}
+     {% endfor %}
+   </a>
+ `);
+ }
+
+</script>
+
