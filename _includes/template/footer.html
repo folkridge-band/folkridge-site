@@ -18,13 +18,25 @@
 
            if (isMobile()) {
 
-            document.write(`
-             <a href="{{contact.config.mobile_link}}" target="_blank" class="footer-social-media__link">
-               {% for icon in contact.config.socials %}
-                 {{icon.classname}}
-               {% endfor %}
-             </a>
-           `);
+            if(getMobileOperatingSystem() == 'iOS'){
+               document.write(`
+                <a href="{{contact.config.mobile_link}}" target="_blank" class="footer-social-media__link">
+                  {% for icon in contact.config.socials %}
+                    {{icon.classname}}
+                  {% endfor %}
+                </a>
+              `);
+            }else{
+              document.write(`
+                <a href="{{contact.config.fallback_mobile_link}}" target="_blank" class="footer-social-media__link">
+                  {% for icon in contact.config.socials %}
+                    {{icon.classname}}
+                  {% endfor %}
+                </a>
+              `);
+            }
+
+           
            } else {
             document.write(`
              <a href="{{contact.config.link}}" target="_blank" class="footer-social-media__link">
@@ -74,7 +86,7 @@
      <script type="text/javascript">
       if (isMobile()) {
        document.write(`
-         <a href="fb://page/?id=738493646487377/photos" target="_blank" class="crumbs__link">GALLERY</a>
+         <a href="https://m.facebook.com/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
        `);
       } else {
        document.write(`

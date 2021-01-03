@@ -35,6 +35,26 @@
 
     return true;
   }
+
+  function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Windows Phone must come first because its UA also contains "Android"
+      if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+      }
+
+      if (/android/i.test(userAgent)) {
+        return "Android";
+      }
+
+      // iOS detection from: http://stackoverflow.com/a/9039885/177710
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+      }
+
+      return "unknown";
+    }
 </script>
  <!-- Start wrapper -->
  <div id="wrapper">
@@ -90,7 +110,7 @@
         <script type="text/javascript">
           if (isMobile()) {
             document.write(`
-            <a href="fb://page/738493646487377/photos" target="_blank" class="nav-link">GALLERY</a>
+            <a href="https://m.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link">GALLERY</a>
          `);
           } else {
             document.write(`
@@ -355,13 +375,25 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
 
            if (isMobile()) {
 
-            document.write(`
-             <a href="fb://page/?id=738493646487377" target="_blank" class="footer-social-media__link">
-               
-                 <i class="fab fa-facebook-f"></i>
-               
-             </a>
-           `);
+            if(getMobileOperatingSystem() == 'iOS'){
+               document.write(`
+                <a href="fb://page/?id=738493646487377" target="_blank" class="footer-social-media__link">
+                  
+                    <i class="fab fa-facebook-f"></i>
+                  
+                </a>
+              `);
+            }else{
+              document.write(`
+                <a href="fb://page/738493646487377" target="_blank" class="footer-social-media__link">
+                  
+                    <i class="fab fa-facebook-f"></i>
+                  
+                </a>
+              `);
+            }
+
+           
            } else {
             document.write(`
              <a href="https://www.facebook.com/FolkRidgeBand/" target="_blank" class="footer-social-media__link">
@@ -427,7 +459,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
      <script type="text/javascript">
       if (isMobile()) {
        document.write(`
-         <a href="fb://page/?id=738493646487377/photos" target="_blank" class="crumbs__link">GALLERY</a>
+         <a href="https://m.facebook.com/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
        `);
       } else {
        document.write(`
