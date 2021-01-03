@@ -74,7 +74,7 @@ permalink: /
           <div class="swiper-wrapper">
           <!-- Slides -->
           {% for slide in slider_section.images %}
-            <img src="{{slide.url}}" class="swiper-slide">
+            <img src="{{slide.url}}" class="swiper-slide" alt="{{ slide.alternativeText }}" title="{{ slide.alternativeText }}">
           {% endfor %}
           </div>
         </div>
