@@ -59,9 +59,7 @@ class Media{
     /* Hides the icon */
     this.videoFeaturedOverlay.classList.add('featured-video__play--hide');
 
-    /* Plays the video */
-    const videoSrc = `${this.videoFeatured.src}?autoplay=1`;
-    this.videoFeatured.src = videoSrc;
+    this.videoFeatured.src += '?autoplay=1';
   });
  }
 }
