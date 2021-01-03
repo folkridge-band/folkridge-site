@@ -30,18 +30,22 @@
             <div class="band-card__social-media">
               {%- for medium in member.social_media -%}
 
+
+               {% if medium.mobile_link %}
                 <script type="text/javascript">
-                  
-                  
-                  if(!isMobile()){
-                    alert('di siya mobile');
+                  if (isMobile()) {
+                    {% assign link = medium.mobile_link %}    
                   }else{
-                    alert('mobile siya eh');
+                    {% assign link = medium.link %}  
                   }
-
                 </script>
+               {% else %}
+                  {% assign link = medium.link %}
+               {% endif %}
 
-                <a href="{{medium.link}}" target="_blank" class="btn-round__accent">
+               
+
+                <a href="{{link}}" target="_blank" class="btn-round__accent">
                   {%- for social_info in medium.socials -%}
                     {{social_info.classname}}
                   {%- endfor -%}
