@@ -28,7 +28,18 @@
             <!-- Row Social Media -->
             <div class="band-card__social-media">
               {%- for medium in member.social_media -%}
-                <a href="instagram://user?username=rapunk27" target="_blank" class="btn-round__accent">
+
+                <script type="text/javascript">
+
+                  if(isMobile()){
+                    alert('yes its mobile');
+                  }else{
+                    alert('di siya mobuile');
+                  }
+
+                </script>
+
+                <a href="{{medium.link}}" target="_blank" class="btn-round__accent">
                   {%- for social_info in medium.socials -%}
                     {{social_info.classname}}
                   {%- endfor -%}
