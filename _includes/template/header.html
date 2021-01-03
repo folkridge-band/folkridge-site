@@ -17,15 +17,19 @@
  <!-- Row Styles -->
  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.min.css">
  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
 </head>
 
 <body>
+<!-- Need this to use the isMobile Function() -->
+{% include js/page.html %}
  <!-- Start wrapper -->
  <div id="wrapper">
 
   <!-- Start Main -->
   <div id="main">
-
+  
   <!-- Row Header -->
 
    <header class="">
@@ -69,9 +73,21 @@
            class="submenu-item__link">Reserves</a></li>
         </ul>
        </li>
+       <!-- Gallery Nav -->
        <li class="nav-list__item">
-        <a href="https://touch.facebook.com/pg/FolkRidgeBand/photos/?ref=page_internal" target="_blank" class="nav-link">GALLERY</a>
+        <script type="text/javascript">
+          if (isMobile()) {
+            document.write(`
+            <a href="fb://page/738493646487377/photos" target="_blank" class="nav-link">GALLERY</a>
+         `);
+          } else {
+            document.write(`
+            <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link">GALLERY</a>
+         `);
+          }
+        </script>
        </li>
+       <!-- End Gallery Nav -->
        <li class="nav-list__item">
         <a href="{{site.baseurl}}/rates/" class="nav-link">RATES</a>
        </li>
@@ -84,3 +100,4 @@
     </div>
     <!-- End Navigation -->
    </header>
+

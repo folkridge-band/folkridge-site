@@ -17,15 +17,31 @@
  <!-- Row Styles -->
  <link rel="stylesheet" href="/assets/css/style.min.css">
  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
 </head>
 
 <body>
+<!-- Need this to use the isMobile Function() -->
+<script type="text/javascript">
+ function isMobile() {
+   if (navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i))
+
+    return true;
+  }
+</script>
  <!-- Start wrapper -->
  <div id="wrapper">
 
   <!-- Start Main -->
   <div id="main">
-
+  
   <!-- Row Header -->
 
    <header class="">
@@ -69,9 +85,21 @@
            class="submenu-item__link">Reserves</a></li>
         </ul>
        </li>
+       <!-- Gallery Nav -->
        <li class="nav-list__item">
-        <a href="https://touch.facebook.com/pg/FolkRidgeBand/photos/?ref=page_internal" target="_blank" class="nav-link">GALLERY</a>
+        <script type="text/javascript">
+          if (isMobile()) {
+            document.write(`
+            <a href="fb://page/738493646487377/photos" target="_blank" class="nav-link">GALLERY</a>
+         `);
+          } else {
+            document.write(`
+            <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link">GALLERY</a>
+         `);
+          }
+        </script>
        </li>
+       <!-- End Gallery Nav -->
        <li class="nav-list__item">
         <a href="/rates/" class="nav-link">RATES</a>
        </li>
@@ -84,6 +112,8 @@
     </div>
     <!-- End Navigation -->
    </header>
+
+
 
 
     
@@ -130,7 +160,7 @@
           
           
           <div class="offer-item__container">
- <a href="#" target="_blank" class="offer-item__img-link">
+ <a href="/contact/?band_package=quartet" target="_blank" class="offer-item__img-link">
   <img src="https://res.cloudinary.com/folk-ridge-band/image/upload/v1609470111/offer_trio_082978de39.jpg" alt="Offer 1" title="Offer 1" class="offer-item__img">
   <div class="offer-item__title-container">
    <h4 class="offer-item__title">Quartet</h4>
@@ -151,7 +181,7 @@
           
           
           <div class="offer-item__container">
- <a href="#" target="_blank" class="offer-item__img-link">
+ <a href="/contact/?band_package=full_band" target="_blank" class="offer-item__img-link">
   <img src="https://res.cloudinary.com/folk-ridge-band/image/upload/v1609470110/offer_quartet_8f8ab9c994.jpg" alt="Offer 1" title="Offer 1" class="offer-item__img">
   <div class="offer-item__title-container">
    <h4 class="offer-item__title">Full Band</h4>
@@ -172,7 +202,7 @@
           
           
           <div class="offer-item__container">
- <a href="#" target="_blank" class="offer-item__img-link">
+ <a href="/contact/?band_package=custom" target="_blank" class="offer-item__img-link">
   <img src="https://res.cloudinary.com/folk-ridge-band/image/upload/v1609470108/offer_full_771ca25f82.jpg" alt="Offer 1" title="Offer 1" class="offer-item__img">
   <div class="offer-item__title-container">
    <h4 class="offer-item__title">Custom</h4>
@@ -319,20 +349,60 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
  <h2 class="footer-heading">Let's Connect</h2>
 
  <!-- Row Social Media -->
- <div class="footer-social-media__container">
-  <a href="#" target="_blank" class="footer-social-media__link">
-   <i class="fa fa-facebook footer-social-media__icon"></i>
-  </a>
-  <a href="#" target="_blank" class="footer-social-media__link">
-   <i class="fa fa-youtube footer-social-media__icon"></i>
-  </a>
-  <a href="#" target="_blank" class="footer-social-media__link">
-   <i class="fa fa-instagram footer-social-media__icon"></i>
-  </a>
-  <a href="#" target="_blank" class="footer-social-media__link">
-   <i class="far fa-envelope footer-social-media__icon"></i>
-  </a>
- </div>
+ <div class="footer-social-media__container"><!-- Row Band Card -->
+       
+          <script type="text/javascript">
+
+           if (isMobile()) {
+
+            document.write(`
+             <a href="fb://page/738493646487377" target="_blank" class="footer-social-media__link">
+               
+                 <i class="fab fa-facebook-f"></i>
+               
+             </a>
+           `);
+           } else {
+            document.write(`
+             <a href="https://www.facebook.com/FolkRidgeBand/" target="_blank" class="footer-social-media__link">
+               
+                 <i class="fab fa-facebook-f"></i>
+               
+             </a>
+           `);
+           }
+
+          </script>
+       
+
+      <!-- End Band Card --><!-- Row Band Card -->
+       
+          <a href="#" target="_blank" class="footer-social-media__link">
+           
+              <i class="fab fa-youtube"></i>
+           
+          </a>
+       
+
+      <!-- End Band Card --><!-- Row Band Card -->
+       
+          <a href="#" target="_blank" class="footer-social-media__link">
+           
+              <i class="fab fa-instagram"></i>
+           
+          </a>
+       
+
+      <!-- End Band Card --><!-- Row Band Card -->
+       
+          <a href="mailto:folkridgeband@gmail.com" target="_blank" class="footer-social-media__link">
+           
+              <i class="fas fa-envelope"></i>
+           
+          </a>
+       
+
+      <!-- End Band Card --></div>
 <!-- End Social Media -->
 
 
@@ -353,7 +423,19 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
     </div>
 
     <div class="crumbs__item">
-     <a href="https://touch.facebook.com/pg/FolkRidgeBand/photos/?ref=page_internal" target="_blank" class="crumbs__link">GALLERY</a>
+     
+     <script type="text/javascript">
+      if (isMobile()) {
+       document.write(`
+         <a href="fb://page/738493646487377/photos" target="_blank" class="crumbs__link">GALLERY</a>
+       `);
+      } else {
+       document.write(`
+          <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+       `);
+      }
+      </script>
+    
     </div>
 
     <div class="crumbs__item">

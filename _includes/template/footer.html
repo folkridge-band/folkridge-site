@@ -7,18 +7,48 @@
 
  <!-- Row Social Media -->
  <div class="footer-social-media__container">
-  <a href="#" target="_blank" class="footer-social-media__link">
-   <i class="fa fa-facebook footer-social-media__icon"></i>
-  </a>
-  <a href="#" target="_blank" class="footer-social-media__link">
-   <i class="fa fa-youtube footer-social-media__icon"></i>
-  </a>
-  <a href="#" target="_blank" class="footer-social-media__link">
-   <i class="fa fa-instagram footer-social-media__icon"></i>
-  </a>
-  <a href="#" target="_blank" class="footer-social-media__link">
-   <i class="far fa-envelope footer-social-media__icon"></i>
-  </a>
+  {%- if strapi.collections.contacts.size > 0 -%}
+  
+    {% assign sorted_contacts = strapi.collections.contacts | sort: "id" %}
+    {%- for contact in sorted_contacts -%}
+    
+      <!-- Row Band Card -->
+       {% if contact.config.mobile_link %}
+          <script type="text/javascript">
+
+           if (isMobile()) {
+
+            document.write(`
+             <a href="{{contact.config.mobile_link}}" target="_blank" class="footer-social-media__link">
+               {% for icon in contact.config.socials %}
+                 {{icon.classname}}
+               {% endfor %}
+             </a>
+           `);
+           } else {
+            document.write(`
+             <a href="{{contact.config.link}}" target="_blank" class="footer-social-media__link">
+               {% for icon in contact.config.socials %}
+                 {{icon.classname}}
+               {% endfor %}
+             </a>
+           `);
+           }
+
+          </script>
+       {% else %}
+          <a href="{{contact.config.link}}" target="_blank" class="footer-social-media__link">
+           {% for icon in contact.config.socials %}
+              {{icon.classname}}
+           {% endfor %}
+          </a>
+       {% endif %}
+
+      <!-- End Band Card -->
+    
+    {%- endfor -%}
+  {%- endif -%}
+
  </div>
 <!-- End Social Media -->
 
@@ -40,7 +70,19 @@
     </div>
 
     <div class="crumbs__item">
-     <a href="https://touch.facebook.com/pg/FolkRidgeBand/photos/?ref=page_internal" target="_blank" class="crumbs__link">GALLERY</a>
+     
+     <script type="text/javascript">
+      if (isMobile()) {
+       document.write(`
+         <a href="fb://page/738493646487377/photos" target="_blank" class="crumbs__link">GALLERY</a>
+       `);
+      } else {
+       document.write(`
+          <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+       `);
+      }
+      </script>
+    
     </div>
 
     <div class="crumbs__item">

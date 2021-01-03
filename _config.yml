@@ -30,6 +30,8 @@ strapi:
           type: packages
         socials:
           type: socials
+        contacts:
+          type: contacts
           
 
           
