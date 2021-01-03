@@ -6,19 +6,21 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+ {% assign meta = strapi.collections.page-metas | where:"permalink", page.url | first %}
 
- <meta name="og:title" property="og:title" content="Folk Ridge">
- <meta name="description" content="5 piece band that plays classic Country and Folk songs. As well as Rock n Roll">
+ <meta name="og:title" property="og:title" content="{{ site.title }} - {{ meta.title }} | {{ meta.description }}">
+ <meta name="description" content="{{meta.description}}">
  <meta property="og:image" content="https://github.com/folkridge-band/folkridge-site/blob/master/assets/images/meta.jpg?raw=true">
- <meta property="og:url" content="{{site.baseurl}}/">
+ <meta property="og:url" content="{{site.baseurl}}{{meta.permalink}}">
 
- <title>Folk Ridge</title>
+
+ <title>{{ site.title }} - {{ meta.title }} | {{ meta.description }}</title>
 
  <!-- Row Styles -->
  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.min.css">
  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-
+<link rel="shortcut icon" href="#">
 </head>
 
 <body>
@@ -37,7 +39,7 @@
     <div class="logo__container">
      <div class="logo__wrapper">
       <a href="{{site.baseurl}}/" class="logo-img__container">
-       <img src="{{site.baseurl}}/assets/images/folkridge-logo.svg" alt="Folk Ridge" title="Folk Ridge" class="logo-img">
+       <img src="{{site.baseurl}}/assets/images/folkridge-logo.svg" alt="Folk Ridge - Logo" title="Folk Ridge" class="logo-img" loading="lazy">
       </a>
       <a href="{{site.baseurl}}/" class="logo-text">
        <span class="logo-text__first">FOLK</span>
@@ -63,14 +65,14 @@
         <a href="{{site.baseurl}}/" class="nav-link">HOME</a>
        </li>
        <li class="nav-list__item has-submenu">
-        <a href="#" target="_blank" class="nav-link">ABOUT</a>
+        <a href="#" target="_blank" class="nav-link" name="about" title="about">ABOUT</a>
         <ul class="submenu">
          <li class="submenu-item"><a href="{{site.baseurl}}/about/history"
-           class="submenu-item__link">History</a></li>
-         <li class="submenu-item"><a href="{{site.baseurl}}/about/the-band/" class="submenu-item__link">The
+           class="submenu-item__link" name="History" title="History">History</a></li>
+         <li class="submenu-item"><a href="{{site.baseurl}}/about/the-band/" class="submenu-item__link" name="The Band" title="The Band">The
            Band</a></li>
          <li class="submenu-item"><a href="{{site.baseurl}}/about/reserves/"
-           class="submenu-item__link">Reserves</a></li>
+           class="submenu-item__link" name="Reserves" title="Reserves">Reserves</a></li>
         </ul>
        </li>
        <!-- Gallery Nav -->
@@ -80,27 +82,27 @@
 
             if(getMobileOperatingSystem() == 'iOS'){
               document.write(`
-                <a href="https://www.facebook.com/pg/FolkRidgeBand/photos/" target="_blank" class="nav-link">GALLERY</a>
+                <a href="https://www.facebook.com/pg/FolkRidgeBand/photos/" target="_blank" class="nav-link" name="Gallery" title="Gallery">GALLERY</a>
             `);
             }else{
               document.write(`
-                <a href="https://m.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link">GALLERY</a>
+                <a href="https://m.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link" name="Gallery" title="Gallery">GALLERY</a>
             `);
             }
             
           } else {
             document.write(`
-            <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link">GALLERY</a>
+            <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link" name="Gallery" title="Gallery">GALLERY</a>
          `);
           }
         </script>
        </li>
        <!-- End Gallery Nav -->
        <li class="nav-list__item">
-        <a href="{{site.baseurl}}/rates/" class="nav-link">RATES</a>
+        <a href="{{site.baseurl}}/rates/" class="nav-link" name="Rates" title="Rates">RATES</a>
        </li>
        <li class="nav-list__item">
-        <a href="{{site.baseurl}}/contact/" class="nav-link">CONTACT</a>
+        <a href="{{site.baseurl}}/contact/" class="nav-link" name="Contact" title="Contact">CONTACT</a>
        </li>
    
       </ul>

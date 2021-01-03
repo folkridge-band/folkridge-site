@@ -1,6 +1,6 @@
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
-title: "Folk Ridge Title" # the name of your site, e.g. ACME Corp.
+title: "Folk Ridge" # the name of your site, e.g. ACME Corp.
 
 
 exclude: ["source", "node_modules", "mix-manifest.json", "package-lock.json", "package.json", "webpack.mix.js"]
@@ -32,6 +32,8 @@ strapi:
           type: socials
         contacts:
           type: contacts
+        page-metas:
+          type: page-metas
           
 
           

@@ -1,5 +1,8 @@
 ---
 layout: about
+title: About | History
+meta: About History Meta Page
+permalink: /about/history/
 ---
 
 
@@ -11,7 +14,7 @@ layout: about
   {% if zone.__component == 'section.page-layout' %}
     <div class="history-container container container__nowrap">
       <div class="history__image-container col-lg5 col-md12">
-        <img src="{{ zone.image.url }}" alt="Image" title="Image" class="history__image">
+        <img src="{{ zone.image.url }}" alt="Folk Ridge - History Image" title="Folk Ridge - History Image" class="history__image">
       </div>
     
       <div class="history__blurb col-lg7 col-md12 mt-md-20">
@@ -26,7 +29,7 @@ layout: about
   {% endif %}
 
   {% if zone.__component == 'section.button-center' %}
-    <a href="{{zone.destination_link}}" class="history__button btn btn-accent mt-60 mb-60" target="_blank">VIEW BAND RESUME</a>
+    <a href="{{zone.destination_link}}" class="history__button btn btn-accent mt-60 mb-60" target="_blank" title="View Band Resume" name="View Band Resume">VIEW BAND RESUME</a>
   {% endif %}
 
 

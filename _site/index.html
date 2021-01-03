@@ -6,19 +6,21 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+ 
 
- <meta name="og:title" property="og:title" content="Folk Ridge">
- <meta name="description" content="5 piece band that plays classic Country and Folk songs. As well as Rock n Roll">
+ <meta name="og:title" property="og:title" content="Folk Ridge - Home | Home Page Meta">
+ <meta name="description" content="Home Page Meta">
  <meta property="og:image" content="https://github.com/folkridge-band/folkridge-site/blob/master/assets/images/meta.jpg?raw=true">
  <meta property="og:url" content="/">
 
- <title>Folk Ridge</title>
+
+ <title>Folk Ridge - Home | Home Page Meta</title>
 
  <!-- Row Styles -->
  <link rel="stylesheet" href="/assets/css/style.min.css">
  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-
+<link rel="shortcut icon" href="#">
 </head>
 
 <body>
@@ -69,7 +71,7 @@
     <div class="logo__container">
      <div class="logo__wrapper">
       <a href="/" class="logo-img__container">
-       <img src="/assets/images/folkridge-logo.svg" alt="Folk Ridge" title="Folk Ridge" class="logo-img">
+       <img src="/assets/images/folkridge-logo.svg" alt="Folk Ridge - Logo" title="Folk Ridge" class="logo-img" loading="lazy">
       </a>
       <a href="/" class="logo-text">
        <span class="logo-text__first">FOLK</span>
@@ -95,14 +97,14 @@
         <a href="/" class="nav-link">HOME</a>
        </li>
        <li class="nav-list__item has-submenu">
-        <a href="#" target="_blank" class="nav-link">ABOUT</a>
+        <a href="#" target="_blank" class="nav-link" name="about" title="about">ABOUT</a>
         <ul class="submenu">
          <li class="submenu-item"><a href="/about/history"
-           class="submenu-item__link">History</a></li>
-         <li class="submenu-item"><a href="/about/the-band/" class="submenu-item__link">The
+           class="submenu-item__link" name="History" title="History">History</a></li>
+         <li class="submenu-item"><a href="/about/the-band/" class="submenu-item__link" name="The Band" title="The Band">The
            Band</a></li>
          <li class="submenu-item"><a href="/about/reserves/"
-           class="submenu-item__link">Reserves</a></li>
+           class="submenu-item__link" name="Reserves" title="Reserves">Reserves</a></li>
         </ul>
        </li>
        <!-- Gallery Nav -->
@@ -112,27 +114,27 @@
 
             if(getMobileOperatingSystem() == 'iOS'){
               document.write(`
-                <a href="https://www.facebook.com/pg/FolkRidgeBand/photos/" target="_blank" class="nav-link">GALLERY</a>
+                <a href="https://www.facebook.com/pg/FolkRidgeBand/photos/" target="_blank" class="nav-link" name="Gallery" title="Gallery">GALLERY</a>
             `);
             }else{
               document.write(`
-                <a href="https://m.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link">GALLERY</a>
+                <a href="https://m.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link" name="Gallery" title="Gallery">GALLERY</a>
             `);
             }
             
           } else {
             document.write(`
-            <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link">GALLERY</a>
+            <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="nav-link" name="Gallery" title="Gallery">GALLERY</a>
          `);
           }
         </script>
        </li>
        <!-- End Gallery Nav -->
        <li class="nav-list__item">
-        <a href="/rates/" class="nav-link">RATES</a>
+        <a href="/rates/" class="nav-link" name="Rates" title="Rates">RATES</a>
        </li>
        <li class="nav-list__item">
-        <a href="/contact/" class="nav-link">CONTACT</a>
+        <a href="/contact/" class="nav-link" name="Contact" title="Contact">CONTACT</a>
        </li>
    
       </ul>
@@ -462,7 +464,25 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
     </div>
 
     <div class="crumbs__item">
-      <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+     
+     <script type="text/javascript">
+      if (isMobile()) {
+         if (getMobileOperatingSystem() == 'iOS') {
+          document.write(`
+               <a href="https://www.facebook.com/pg/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+            `);
+        } else {
+          document.write(`
+                <a href="https://m.facebook.com/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+            `);
+        }
+      } else {
+       document.write(`
+          <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+       `);
+      }
+      </script>
+    
     </div>
 
     <div class="crumbs__item">
