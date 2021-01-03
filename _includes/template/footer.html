@@ -81,7 +81,25 @@
     </div>
 
     <div class="crumbs__item">
-      <a href="https://www.facebook.com/pg/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+     
+     <script type="text/javascript">
+      if (isMobile()) {
+         if (getMobileOperatingSystem() == 'iOS') {
+          document.write(`
+               <a href="https://www.facebook.com/pg/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+            `);
+        } else {
+          document.write(`
+                <a href="https://m.facebook.com/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+            `);
+        }
+      } else {
+       document.write(`
+          <a href="https://www.facebook.com/FolkRidgeBand/photos/" target="_blank" class="crumbs__link">GALLERY</a>
+       `);
+      }
+      </script>
+    
     </div>
 
     <div class="crumbs__item">
