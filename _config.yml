@@ -3,7 +3,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: "Folk Ridge" # the name of your site, e.g. ACME Corp.
 
 
-exclude: ["source", "node_modules", "mix-manifest.json", "package-lock.json", "package.json", "webpack.mix.js"]
+exclude: ["source", "node_modules", "mix-manifest.json", "package-lock.json", "package.json", "webpack.mix.js", ".jekyll-cache"]
 
 plugins:  
   - jekyll-feed
