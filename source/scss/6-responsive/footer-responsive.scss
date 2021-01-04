@@ -49,10 +49,12 @@
   
   .crumbs{
     flex-wrap:wrap;
+    width: 80%;
+    margin: 40px auto 0 auto;
   }
 
   .crumbs__link{
-    font-size:0.875rem;
+    font-size:0.775rem;
   }
 
   footer {

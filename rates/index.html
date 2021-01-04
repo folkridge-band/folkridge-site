@@ -5,7 +5,9 @@ meta: Rates Meta Page
 permalink: /rates/
 ---
 
-<h1 class="page-title hex-primary">Rates</h1>
+{% assign page_entity = strapi.collections.pages | where:"id", "4" | first %}
+
+<h1 class="page-title hex-primary">{{page_entity.name}}</h1>
 
 <div class="container">
   <!-- Row Notes -->

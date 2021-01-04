@@ -4,6 +4,9 @@ title: Contact
 meta: Contact Meta Page
 permalink: /contact/
 ---
-<h1 class="hex-primary page-title" id="contactPageTitle">Contact Us </h1>
+
+{% assign page_entity = strapi.collections.pages | where:"id", "5" | first %}
+
+<h1 class="page-title hex-primary" id="contactPageTitle">{{page_entity.name}}</h1>
 
 {% include template/contact-form.html %}
