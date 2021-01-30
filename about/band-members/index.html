@@ -21,6 +21,17 @@ layout: about
     {%- endfor -%}
   {%- endif -%}
 
+  <!-- Checks if its Bandmember page through ID -->
+  <!-- Then checks if component is equals to section.button-center -->
+  {% assign page = strapi.collections.pages | where:"id", "6" | first %}
+  {% assign zone_button_center = page.zone | where:"__component", "section.button-center" | first %}
+
+  {% if zone_button_center %}
+  <a href="{{zone_button_center.destination_link}}" class="history__button btn btn-accent mt-60 mb-60" title="Download Band Resume"
+    name="Download Band Resume" download><i class="fas fa-download"></i> DOWNLOAD BAND RESUME</a>
+  {% endif %}
+
+  
   
   {% include snippet/modal.html %}
 
