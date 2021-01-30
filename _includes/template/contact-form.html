@@ -1,6 +1,16 @@
+{% assign page = strapi.collections.pages | where:"id", "5" | first %}
+{% assign note = page.zone | where:"__component", "package.note" | first %}
+
 <div class="container form__container container__flex">
  <div class="form__fields col-lg7 col-sm12">
   <form action="POST" data-netlify="true" class="form">
+  <!-- Checks if note is empty -->
+  {% if note.text != '' %}
+    <div class="help-warning hex-accent mb-30">
+      <strong>Note: </strong>
+      <p>{{ note.text }}</p>
+    </div>
+  {% endif %}
 
    <div class="form__two-col">
     <div class="form-group form-input__name">
