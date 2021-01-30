@@ -15,7 +15,7 @@ permalink: /about/reserves/
     {% assign sorted_members = strapi.collections.bandmembers | sort: "id" %}
       {%- for member in sorted_members -%}
 
-      {%- if member.membership_type == 'reserve' -%}
+      {%- if member.membership_type == 'reserve' and member.status -%}
 
          <!-- Row band Card -->
          {% include snippet/band-card.html %}

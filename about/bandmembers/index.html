@@ -1,8 +1,8 @@
 ---
 layout: about
-title: About | The Band
+title: About | Band Members
 meta: About Band Meta Page
-permalink: /about/the-band/
+permalink: /about/band-members/
 ---
 
 
@@ -14,7 +14,7 @@ permalink: /about/the-band/
     {% assign sorted_members = strapi.collections.bandmembers | sort: "id" %}
     {%- for member in sorted_members -%}
     
-      {%- if member.membership_type == 'main' -%}
+      {%- if member.membership_type == 'main' and member.status -%}
 
         <!-- Row Band Card -->
         {% include snippet/band-card.html %}
