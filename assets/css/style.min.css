@@ -4525,7 +4525,7 @@ footer {
 }
 
 .history__blurb p {
-  padding: 15px 25px;
+  padding: 0 25px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -4537,6 +4537,10 @@ footer {
 
   .history__image-container {
     width: 100%;
+  }
+
+  .history__blurb p {
+    padding: 15px 25px;
   }
 }
 .form__container {
