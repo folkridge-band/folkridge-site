@@ -2,7 +2,7 @@
 layout: default 
 ---
 
-{% assign page = strapi.collections.pages | where:"id", "1" | first %}
+{% assign page = strapi.collections.pages | where:"id", "643bb2201fa5b4001445953f" | first %}
 
 {% for zone in page.zone %}
   {% if zone.__component == 'section.heading' %}

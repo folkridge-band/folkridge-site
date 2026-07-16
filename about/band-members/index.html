@@ -23,7 +23,7 @@ layout: about
 
   <!-- Checks if its Bandmember page through ID -->
   <!-- Then checks if component is equals to section.button-center -->
-  {% assign page = strapi.collections.pages | where:"id", "6" | first %}
+  {% assign page = strapi.collections.pages | where:"id", "643bb30a1fa5b40014459560" | first %}
   {% assign zone_button_center = page.zone | where:"__component", "section.button-center" | first %}
 
   {% if zone_button_center %}
