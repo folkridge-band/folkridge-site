@@ -24,11 +24,16 @@ layout: about
   <!-- Checks if its Bandmember page through ID -->
   <!-- Then checks if component is equals to section.button-center -->
   {% assign page = strapi.collections.pages | where:"id", "643bb30a1fa5b40014459560" | first %}
-  {% assign zone_button_center = page.zone | where:"__component", "section.button-center" | first %}
+  {% assign download_button = page.zone | where:"__component", "section.download-button" | first %}
 
-  {% if zone_button_center %}
-  <a href="{{zone_button_center.destination_link}}" class="history__button btn btn-accent mt-60 mb-60" title="Download Band Resume"
-    name="Download Band Resume" download><i class="fas fa-download"></i> DOWNLOAD BAND RESUME</a>
+  {% if download_button %}
+    <a href="{{ download_button.source.file.url }}"
+      class="history__button btn btn-accent mt-60 mb-60"
+      title="Download Band Resume"
+      name="Download Band Resume"
+      download>
+      <i class="fas fa-download"></i> DOWNLOAD BAND RESUME
+    </a>
   {% endif %}
 
   
