@@ -4794,6 +4794,7 @@ footer {
 .band-swiper, .swiper-container {
   width: 80%;
   max-width: 600px;
+  margin-inline: auto;
   height: 90%;
   max-height: 360px;
   overflow: hidden;
@@ -4844,7 +4845,7 @@ footer {
     left: 20px;
   }
 
-  .swiper-button-right {
+  .swiper-button-next {
     right: 20px;
   }
 }
