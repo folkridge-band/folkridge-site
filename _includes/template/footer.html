@@ -9,7 +9,8 @@
  <div class="footer-social-media__container">
   {%- if strapi.collections.contacts.size > 0 -%}
   
-    {% assign sorted_contacts = strapi.collections.contacts | sort: "id" %}
+    <!-- Keep the contact links in their original display order. -->
+    {% assign sorted_contacts = strapi.collections.contacts | sort: "website_order" %}
     {%- for contact in sorted_contacts -%}
     
       <!-- Row Band Card -->

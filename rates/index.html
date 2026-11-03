@@ -2,26 +2,25 @@
 layout: default
 ---
 
-{% assign page_entity = strapi.collections.pages | where:"id", "643bb28f1fa5b40014459552" | first %}
+<!-- Rates page data: its zone contains the notes and conditions below. -->
+{% assign rates_page = strapi.collections.pages | where:"documentId", "mcyptezxjewam6az4767lo9d" | first %}
 
-<h1 class="page-title hex-primary">{{page_entity.name}}</h1>
+<h1 class="page-title hex-primary">{{rates_page.name}}</h1>
 
 <div class="container">
   <!-- Row Notes -->
   <div class="package__notes hex-gray display-flex__center">
 
-    {% for page in strapi.collections.pages %}
-      {% if page.id == 4%}
         <p class="package__notes-blurb">
           <strong>Note</strong>: 
-          {% for note_zone in page.zone %}
+          {% for note_zone in rates_page.zone %}
             {% if note_zone.__component == 'package.note' %}
               {{ note_zone.text }}
             {% endif %}
           {% endfor %}
         </p>
         <ol class="package__list">
-        {% for note_list_zone in page.zone %}
+        {% for note_list_zone in rates_page.zone %}
           {% if note_list_zone.__component == 'package.list' %}
           
            {% for element in note_list_zone.note_list %}
@@ -34,8 +33,6 @@ layout: default
         {% endfor %}
         </ol>
 
-      {% endif %}
-    {% endfor %}
   </div>
 
   <!-- Row Package Cards -->

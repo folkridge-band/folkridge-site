@@ -1,11 +1,12 @@
-{% assign page = strapi.collections.pages | where:"id", "5" | first %}
-{% assign note = page.zone | where:"__component", "package.note" | first %}
+<!-- contact_page comes from contact/index.html. Hide the note when its text is empty. -->
+{% assign note = contact_page.zone | where:"__component", "package.note" | first %}
+{% assign note_text = note.text | default: '' | strip %}
 
 <div class="container form__container container__flex">
  <div class="form__fields col-lg7 col-sm12">
   <form action="POST" data-netlify="true" class="form">
   <!-- Checks if note is empty -->
-  {% if note.text != '' %}
+  {% if note_text != '' %}
     <div class="help-warning hex-accent mb-30">
       <strong>Note: </strong>
       <p>{{ note.text }}</p>

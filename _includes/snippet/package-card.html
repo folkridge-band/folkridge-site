@@ -1,3 +1,6 @@
+<!-- Use the saved slug, or the package name when the slug is missing (e.g. Trio). -->
+{% assign package_inquiry_fallback = package.name | slugify | replace: '-', '_' %}
+{% assign package_inquiry = package.slug | default: package_inquiry_fallback %}
 <div class="package-card">
  <div class="package-card__heading">
   <h4 class="hex-white">{{ package.name }}</h4>
@@ -34,6 +37,6 @@
    </ul>
   </div>
 
-  <a href="{{site.baseurl}}/contact/?band_package={{package.slug}}" target="_blank" class="btn btn-accent">INQUIRE</a>
+  <a href="{{site.baseurl}}/contact/?band_package={{package_inquiry}}" target="_blank" class="btn btn-accent">INQUIRE</a>
  </div>
 </div>

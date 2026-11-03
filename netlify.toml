@@ -1,0 +1,3 @@
+# Netlify uses the hosted API; local Jekyll keeps the URL in _config.yml.
+[build.environment]
+  STRAPI_API_URL = "https://strapi-folkridge-v5-64018045401c.herokuapp.com/api"

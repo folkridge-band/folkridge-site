@@ -3,16 +3,19 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: "Folk Ridge" # the name of your site, e.g. ACME Corp.
 
 
-exclude: ["source", "node_modules", "mix-manifest.json", "package-lock.json", "package.json", "webpack.mix.js", ".jekyll-cache"]
+exclude: ["source", "node_modules", "mix-manifest.json", "package-lock.json", "package.json", "webpack.mix.js", ".jekyll-cache", "netlify.toml"]
 
-plugins:  
+plugins:
   - jekyll-feed
   - jekyll-strapi
 
-strapi:  
-    # Your API endpoint (optional, default to http://localhost:1337)
-    enabled: false
-    endpoint: https://strapi-folkridge.herokuapp.com
+strapi:
+    # Original Strapi v3 API on Heroku (reference only; requires the v3 integration).
+    # endpoint: https://strapi-folkridge.herokuapp.com
+
+    # Local Strapi v5 API. Netlify uses the hosted URL in netlify.toml.
+    enabled: true
+    endpoint: http://127.0.0.1:1339/api
     collections:
         # Example for a "posts" collection
         posts:
@@ -35,6 +38,6 @@ strapi:
           type: contacts
         page-metas:
           type: page-metas
-          
 
-          
+
+

@@ -8,10 +8,12 @@ layout: about
   
   {%- if strapi.collections.bandmembers.size > 0 -%}
     
-    {% assign sorted_members = strapi.collections.bandmembers | sort: "id" %}
+    <!-- The v5 plugin supplies website_order to keep your original member order. -->
+    {% assign sorted_members = strapi.collections.bandmembers | sort: "website_order" %}
     {%- for member in sorted_members -%}
     
-      {%- if member.membership_type == 'main' and member.status -%}
+      <!-- is_active is the v5 name for the old status field. -->
+      {%- if member.membership_type == 'main' and member.is_active -%}
 
         <!-- Row Band Card -->
         {% include snippet/band-card.html %}
@@ -21,10 +23,9 @@ layout: about
     {%- endfor -%}
   {%- endif -%}
 
-  <!-- Checks if its Bandmember page through ID -->
-  <!-- Then checks if component is equals to section.button-center -->
-  {% assign page = strapi.collections.pages | where:"id", "643bb30a1fa5b40014459560" | first %}
-  {% assign download_button = page.zone | where:"__component", "section.download-button" | first %}
+  <!-- Resume data: find the Band Members page, then its download-button component. -->
+  {% assign band_page = strapi.collections.pages | where:"documentId", "u22de0ftozzgz7by532yu1nm" | first %}
+  {% assign download_button = band_page.zone | where:"__component", "section.download-button" | first %}
 
   {% if download_button %}
     <a href="{{ download_button.source.file.url }}"

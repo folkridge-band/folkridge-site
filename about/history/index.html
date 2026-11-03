@@ -5,9 +5,10 @@ layout: about
 
 <!-- History -->
 
-{% assign page = strapi.collections.pages | where:"id", "643bb2561fa5b4001445954e" | first %}
+<!-- History page data: documentId replaces the old MongoDB page ID. -->
+{% assign history_page = strapi.collections.pages | where:"documentId", "zdr8vyi4q2q9h5go7a4sou67" | first %}
 
-{% for zone in page.zone %}
+{% for zone in history_page.zone %}
   {% if zone.__component == 'section.page-layout' %}
     <div class="history-container container container__nowrap">
       <div class="history__image-container col-lg5 col-md12">

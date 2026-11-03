@@ -2,8 +2,9 @@
 layout: default
 ---
 
-{% assign page_entity = strapi.collections.pages | where:"id", "643bb28f1fa5b40014459552" | first %}
+<!-- Contact page data: used by this heading and the contact-form include. -->
+{% assign contact_page = strapi.collections.pages | where:"documentId", "t0j1zbx68t6hc0zeewfzh0zs" | first %}
 
-<h1 class="page-title hex-primary" id="contactPageTitle">{{page_entity.name}}</h1>
+<h1 class="page-title hex-primary" id="contactPageTitle">{{contact_page.name}}</h1>
 
 {% include template/contact-form.html %}

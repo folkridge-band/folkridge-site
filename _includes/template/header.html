@@ -2,17 +2,19 @@
 <html lang="en">
 
 <head>
+<!-- CMS source: Strapi v5 | API: {{ site.strapi.endpoint | escape }} | Page: {{ page.url | escape }} | Built: {{ site.time | date_to_xmlschema }} -->
+
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
  {% assign meta = strapi.collections.page-metas | where:"permalink", page.url | first %}
 
- <!-- Condition to check if theres a meta image or else use the default -->
+ <!-- Use the Strapi image URL, or keep the existing default image URL. -->
  {% if meta.image %}
-    {% assign meta_image = meta.image %}
+    {% assign meta_image_url = meta.image.url %}
  {% else %}
-    {% assign meta_image = 'https://github.com/folkridge-band/folkridge-site/blob/master/assets/images/meta.jpg?raw=true' %}
+    {% assign meta_image_url = 'https://github.com/folkridge-band/folkridge-site/blob/master/assets/images/meta.jpg?raw=true' %}
  {% endif %}
 
 <!-- Basic Meta -->
@@ -27,8 +29,8 @@
 <meta property="og:description" content="{{meta.description}}">
 
  <!-- Image Metas -->
- <meta property="og:image" content="{{ meta_image.url }}">
- <meta property="og:image:secure_url" content="{{ meta_image.url }}" />
+ <meta property="og:image" content="{{ meta_image_url }}">
+ <meta property="og:image:secure_url" content="{{ meta_image_url }}" />
  <meta property="og:image:type" content="image/jpeg" />
  <meta property="og:image:width" content="1200" />
  <meta property="og:image:height" content="630" />

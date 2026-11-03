@@ -1,5 +1,8 @@
+<!-- Use the saved slug, or the package name when the slug is missing (e.g. Trio). -->
+{% assign package_inquiry_fallback = package.name | slugify | replace: '-', '_' %}
+{% assign package_inquiry = package.slug | default: package_inquiry_fallback %}
 <div class="offer-item__container">
- <a href="{{site.baseurl}}/contact/?band_package={{package.slug}}" target="_blank" class="offer-item__img-link">
+ <a href="{{site.baseurl}}/contact/?band_package={{package_inquiry}}" target="_blank" class="offer-item__img-link">
   <img src="{{ package.package_image.url }}" alt="{{ site.title }} - {{ package.name }}" title="{{ site.title }} - {{ package.name }}" class="offer-item__img">
   <div class="offer-item__title-container">
    <h4 class="offer-item__title">{{ package.name }}</h4>
@@ -7,5 +10,5 @@
  </a>
  <p class="mt-30 hex-dark">{{ package.description }}</p>
 
- <a href="{{site.baseurl}}/contact/?band_package={{package.slug}}" target="_blank" class="btn btn-accent mt-30 layout-block__center" name="{{package.name}}" title="{{package.name}}">Read More</a>
+ <a href="{{site.baseurl}}/contact/?band_package={{package_inquiry}}" target="_blank" class="btn btn-accent mt-30 layout-block__center" name="{{package.name}}" title="{{package.name}}">Read More</a>
 </div>

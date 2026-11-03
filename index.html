@@ -2,9 +2,12 @@
 layout: default 
 ---
 
-{% assign page = strapi.collections.pages | where:"id", "643bb2201fa5b4001445953f" | first %}
+<!-- Home page data: use its v5 documentId; keep Jekyll's own page variable. -->
+{% assign home_page = strapi.collections.pages | where:"documentId", "ghffo7m8loufk9100kiiu6s6" | first %}
 
-{% for zone in page.zone %}
+<!-- CMS source: Strapi v5 | API: {{ site.strapi.endpoint | escape }} | Home documentId: {{ home_page.documentId | escape }} | Built: {{ site.time | date_to_xmlschema }} -->
+
+{% for zone in home_page.zone %}
   {% if zone.__component == 'section.heading' %}
  <!-- Row Hero -->
  <section class="hero__container" style="background: url('{{zone.background_image.url}}') no-repeat">
@@ -55,7 +58,7 @@ layout: default
  <!-- End Offer -->
 
  <!-- Row About -->
-{% for slider_section in page.zone %}
+{% for slider_section in home_page.zone %}
   {% if slider_section.__component == 'section.slider' %}
     <div class="about__container mt-60 mb-60 layout-flex__center">
       <div class="container container__flex">
@@ -101,7 +104,7 @@ layout: default
  <!-- End About -->
 
  <!-- Row Media -->
-{% for gallery in page.zone %}
+{% for gallery in home_page.zone %}
   {% if gallery.__component == 'section.mini-gallery' %}
   <div class="media-container container__flex mb-40">
     <div class="col-sm12 col-lg6 featured-images">

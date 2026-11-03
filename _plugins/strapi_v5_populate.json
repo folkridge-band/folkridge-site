@@ -1,0 +1,105 @@
+{
+  "bandmembers": {
+    "profile_image": true,
+    "instruments": true,
+    "social_media": {
+      "populate": {
+        "socials": true
+      }
+    }
+  },
+  "contacts": {
+    "config": {
+      "populate": {
+        "socials": true
+      }
+    }
+  },
+  "instruments": {},
+  "packages": {
+    "inclusion": true,
+    "package_image": true,
+    "dynamic": {
+      "on": {
+        "info.social-media": {
+          "populate": {
+            "socials": true
+          }
+        },
+        "info.status": {
+          "populate": "*"
+        },
+        "medium.social-media": {
+          "populate": "*"
+        },
+        "package.inclusion": {
+          "populate": "*"
+        }
+      }
+    }
+  },
+  "pages": {
+    "zone": {
+      "on": {
+        "section.mini-gallery": {
+          "populate": {
+            "crosswise_image": true,
+            "first_cube_image": true,
+            "second_cube_image": true
+          }
+        },
+        "section.button-center": {
+          "populate": "*"
+        },
+        "section.slider": {
+          "populate": {
+            "images": true
+          }
+        },
+        "section.copyright-description": {
+          "populate": "*"
+        },
+        "section.page-heading": {
+          "populate": "*"
+        },
+        "section.heading": {
+          "populate": {
+            "background_image": true
+          }
+        },
+        "section.page-layout": {
+          "populate": {
+            "image": true
+          }
+        },
+        "package.list": {
+          "populate": {
+            "note_list": true
+          }
+        },
+        "package.note": {
+          "populate": "*"
+        },
+        "package.note-list": {
+          "populate": "*"
+        },
+        "section.download-button": {
+          "populate": {
+            "source": {
+              "populate": {
+                "file": true
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "page-metas": {
+    "image": true
+  },
+  "posts": {
+    "cover": true
+  },
+  "socials": {}
+}

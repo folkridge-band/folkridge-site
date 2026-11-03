@@ -9,10 +9,11 @@ layout: about
 
   {%- if strapi.collections.bandmembers.size > 0 -%}
 
-    {% assign sorted_members = strapi.collections.bandmembers | sort: "id" %}
+    <!-- Keep the original order; is_active replaces the old status field below. -->
+    {% assign sorted_members = strapi.collections.bandmembers | sort: "website_order" %}
       {%- for member in sorted_members -%}
 
-      {%- if member.membership_type == 'reserve' and member.status -%}
+      {%- if member.membership_type == 'reserve' and member.is_active -%}
 
          <!-- Row band Card -->
          {% include snippet/band-card.html %}
