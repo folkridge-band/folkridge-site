@@ -55,7 +55,16 @@ The Ruby lockfile includes Windows and Linux platforms.
 These settings follow [Netlify's dependency configuration documentation](https://docs.netlify.com/build/configure-builds/manage-dependencies/).
 No Netlify account settings or pricing-plan changes were made. Before updating
 the production branch, use a branch deploy/Deploy Preview if available and inspect
-its build log and pages. The actual Netlify Linux build has not been run here.
+its build log and pages. The full Netlify Linux build must also pass before merging the upgrade.
+
+### Heroku Eco wake-up handling
+
+An Eco dyno can be asleep when a Netlify build first requests content. The API
+adapter retries temporary HTTP 502/503/504 responses and selected network failures
+up to three attempts, waiting 5 seconds and then 10 seconds between attempts.
+Each attempt has a 5-second connection timeout and a 45-second read timeout.
+Permission errors still fail immediately, and a sustained outage still fails the
+build. No cached or empty content is substituted during production builds.
 
 ### Compatibility pins and remaining maintenance
 
@@ -88,6 +97,9 @@ preserve your current stylesheet structure. Jekyll's Strapi gem warns about
   between the old and new compiled assets.
 - Mobile navigation, Swiper navigation, member/reserve biography popups, and the
   presence of Netlify form markup were checked. No form was submitted.
+- Twelve controlled-response retry checks passed, including recovery after 503,
+  bounded outages/timeouts, immediate permission failures, and pagination. A live
+  read-only check through the updated adapter fetched all 15 bandmembers.
 - Validation used one-off builds without starting a server or watcher.
 
 ## Strapi v5 API
