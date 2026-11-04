@@ -1,3 +1,10 @@
 # Netlify uses the hosted API; local Jekyll keeps the URL in _config.yml.
+[build]
+  command = "npm run prod && bundle exec jekyll build"
+  publish = "_site"
+
 [build.environment]
+  NPM_FLAGS = "--include=dev"
+  RUBY_VERSION = "3.4.12"
+  JEKYLL_ENV = "production"
   STRAPI_API_URL = "https://strapi-folkridge-v5-64018045401c.herokuapp.com/api"

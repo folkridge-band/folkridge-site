@@ -2,6 +2,7 @@
 # Layouts and Liquid component/media paths continue to use strapi.collections.
 require 'jekyll-strapi'
 require 'uri'
+require 'net/http'
 
 module FolkRidgeV5
   # Which images, components and relations to request for each collection.
@@ -37,6 +38,34 @@ module Jekyll
 
       private
 
+      # Eco dynos can return 503 while waking up. Retry only temporary failures.
+      # Three attempts with short waits keep a real outage from hanging the build.
+      def request_v5_page(uri, type)
+        attempts = 0
+        loop do
+          attempts += 1
+          begin
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = uri.scheme == 'https'
+            http.open_timeout = 5
+            http.read_timeout = 45
+            http.max_retries = 0 # Keep retries here so the attempt limit is explicit.
+            request = Net::HTTP::Get.new(uri.request_uri, 'Accept' => 'application/json')
+            response = http.request(request)
+            return response unless %w[502 503 504].include?(response.code)
+            reason = "HTTP #{response.code}"
+          rescue Net::OpenTimeout, Net::ReadTimeout, Errno::ECONNREFUSED, Errno::ECONNRESET, Errno::ETIMEDOUT, EOFError => error
+            reason = error.class.to_s
+          end
+          if attempts >= 3
+            raise "Strapi v5 #{type}: #{reason} after #{attempts} attempts at #{uri.host}. Check the Strapi server."
+          end
+          wait_seconds = attempts * 5
+          Jekyll.logger.warn 'Strapi v5:', "#{type}: #{reason}; retrying in #{wait_seconds}s (attempt #{attempts + 1}/3)."
+          sleep wait_seconds
+        end
+      end
+
       def fetch_v5_records
         endpoint = @site.endpoint.to_s.sub(%r{/+$}, '')
         raise 'Strapi v5 endpoint must end in /api.' unless endpoint.end_with?('/api')
@@ -52,14 +81,10 @@ module Jekyll
           uri = URI("#{endpoint}/#{type}")
           uri.query = URI.encode_www_form(FolkRidgeV5.query_pairs(query))
           Jekyll.logger.info 'Strapi v5:', "Fetching #{endpoint}/#{type}, page #{page_number}"
-          http = Net::HTTP.new(uri.host, uri.port)
-          http.use_ssl = uri.scheme == 'https'
-          http.open_timeout = 5
-          http.read_timeout = 30
-          request = Net::HTTP::Get.new(uri.request_uri, 'Accept' => 'application/json')
-          response = http.request(request)
+          response = request_v5_page(uri, type)
           unless response.code == '200'
-            raise "Strapi v5 #{type}: HTTP #{response.code}. Check the server and Public role find permissions."
+            hint = %w[401 403].include?(response.code) ? 'Check Public role find permissions.' : 'Check the API endpoint and Strapi server logs.'
+            raise "Strapi v5 #{type}: HTTP #{response.code}. #{hint}"
           end
           # v5 records live in data; page counts live in meta.pagination.
           payload = JSON.parse(response.body)
@@ -86,8 +111,6 @@ module Jekyll
           raise "Strapi v5 #{type}: pagination limit exceeded." if page_number > 1000
         end
         documents
-      rescue Errno::ECONNREFUSED, Net::OpenTimeout, Net::ReadTimeout => error
-        raise "Strapi v5 is unavailable at #{endpoint}: #{error.class}. Start the local v5 server first."
       end
     end
   end
