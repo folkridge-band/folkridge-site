@@ -12,20 +12,17 @@
 
 @media #{$device-md} {
 
-  .offer-item__title-container {
-    background: var(--primary);
-    padding: 10px;
-    position: absolute;
-    width: 100px;
-    bottom: -18px;
-    right: 12px;
-    .offer-item__title{
-      font-size:1rem;
-    }
+  // Give longer package names room on tablets before stacking on phones.
+  .offer__items{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
   }
 
-    .offer-item__container {
-      width: 86% !important;
+  .offer-item__title-container {
+    min-height:52px;
+    max-width:calc(100% - 24px);
+    .offer-item__title{
+      font-size:1.125rem;
+    }
   }
 
 }

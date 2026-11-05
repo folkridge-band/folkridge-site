@@ -1,7 +1,8 @@
 .offer-item__container{
   width: 90%;
   max-width:434px;
-  height:max-content;
+  display:flex;
+  flex-direction:column;
   margin: 40px auto 0 auto;
 
   .btn{
@@ -10,9 +11,16 @@
 
   p{
     width:100%;
-    height: 80px;
-    max-height: 100%;
+    margin-top:28px;
+    // Let longer descriptions grow, while keeping each row's buttons aligned.
+    flex:1;
   }
+}
+
+.offer-item__cta{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
 }
 
 .offer__heading{
@@ -21,18 +29,21 @@
 }
 
 .offer-item__img-link{
-  display:inline-block;
+  display:block;
   position:relative;
-  max-width:100%;
-  height:100%;
+  width:100%;
+  aspect-ratio:3 / 2;
+  flex-shrink:0;
   transform: scale(1);
 
 }
 
 .offer-item__img{
+  box-sizing:border-box;
+  display:block;
   max-width:100%;
-  width:432px;
-  height:auto;
+  width:100%;
+  height:100%;
   object-fit:cover;
   border: 1px solid var(--primary);
   transition: all 0.3s ease-in-out;
@@ -43,22 +54,32 @@
 }
 
 .offer-item__title-container{
+  // Fit each banner to its title, with room to wrap inside the photo.
+  box-sizing:border-box;
   background:var(--primary);
-  padding:10px 24px;
+  padding:4px 10px;
   position:absolute;
+  min-height:56px;
+  bottom:-20px;
   width:max-content;
-  bottom:-18px;
-  right:22px;
+  max-width:calc(100% - 32px);
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
   .offer-item__title{
     color:var(--white);
     text-align:center;
+    font-size:1.25rem;
+    line-height:1.2;
   }
 }
 
 .offer__items{
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
   grid-gap: 10px;
   justify-content:space-between;
   width:1366px;

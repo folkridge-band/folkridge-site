@@ -8,7 +8,10 @@
    <h4 class="offer-item__title">{{ package.name }}</h4>
   </div>
  </a>
- <p class="mt-30 hex-dark">{{ package.description }}</p>
+ <p class="hex-dark">{{ package.description }}</p>
 
- <a href="{{site.baseurl}}/contact/?band_package={{package_inquiry}}" target="_blank" class="btn btn-accent mt-30 layout-block__center" name="{{package.name}}" title="{{package.name}}">Read More</a>
+ <!-- Use the same PDF, external link, or inquiry button as the rates cards. -->
+ <div class="offer-item__cta">
+  {% include snippet/package-cta.html %}
+ </div>
 </div>
