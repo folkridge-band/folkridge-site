@@ -10,12 +10,13 @@ layout: about
 
 {% for zone in history_page.zone %}
   {% if zone.__component == 'section.page-layout' %}
-    <div class="history-container container container__nowrap">
-      <div class="history__image-container col-lg5 col-md12">
+    <div class="history-container container">
+      <!-- Float the photo so the story can continue underneath it. -->
+      <div class="history__image-container">
         <img src="{{ zone.image.url }}" alt="Folk Ridge - History Image" title="Folk Ridge - History Image" class="history__image">
       </div>
     
-      <div class="history__blurb col-lg7 col-md12 mt-md-20">
+      <div class="history__blurb">
         <p>
           {{ zone.description }}
     

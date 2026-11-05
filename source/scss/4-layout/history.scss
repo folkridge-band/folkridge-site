@@ -1,14 +1,22 @@
- .history__image{
-   width: 90%;
-   max-width:550px;
-   margin: 0 auto;
-   display:flex;
-   justify-content:center;
- }
+.history-container{
+ // Keep the floated image inside this section, above the following content.
+ display:flow-root;
+ box-sizing:border-box;
+ padding:0 24px;
+}
 
- .history__image-container{
-  align-item: center;
- }
+.history__image-container{
+ float:left;
+ width:40%;
+ max-width:550px;
+ margin:0 32px 20px 0;
+}
+
+.history__image{
+ width:100%;
+ height:auto;
+ display:block;
+}
 
 .history__button{
  width:max-content;
@@ -19,25 +27,20 @@
 
 .history__blurb{
  p{
-  padding:0 25px;
+  padding:0;
  }
 }
 
 @media #{$device-md}{
  .history-container{
-   flex-wrap: wrap;
-   justify-content:center;
    margin-top:20px;
  }
 
  .history__image-container{
+    // Stack the photo above the story on smaller screens.
+    float:none;
     width:100%;
+    margin:0 auto 24px;
  }
 
- .history__blurb{
-  p{
-    padding:15px 25px;
-  }
- }
- 
 }
