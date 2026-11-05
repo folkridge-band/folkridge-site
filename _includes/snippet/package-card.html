@@ -1,6 +1,9 @@
 <!-- Use the saved slug, or the package name when the slug is missing (e.g. Trio). -->
 {% assign package_inquiry_fallback = package.name | slugify | replace: '-', '_' %}
 {% assign package_inquiry = package.slug | default: package_inquiry_fallback %}
+<!-- Use the price as the main heading, or meta when the price is empty. -->
+{% assign package_price = package.price | default: '' | strip %}
+{% assign package_meta = package.meta | default: '' | strip %}
 <div class="package-card">
  <div class="package-card__heading">
   <h4 class="hex-white">{{ package.name }}</h4>
@@ -9,22 +12,28 @@
  <div class="package-card__content">
   <div class="package-card__details">
 
-   <div class="package-card__price-row">
+   <!-- Keep the price/meta intro together, above the inclusion list. -->
+   <div class="package-card__intro">
+    <div class="package-card__price-row">
 
-    {% if package.with_price == true %}
-     <h2 class="package-card__price hex-primary">{{ package.price }}</h2>
-     <h5 class="package-card__gig-word hex-primary">gig</h5>
-    {% else %}
-      <h5 class="hex-primary">{{ package.price }}</h5>
+     {% if package_price != '' %}
+      {% if package.with_price == true %}
+       <h2 class="package-card__price hex-primary">{{ package_price }}</h2>
+       <h5 class="package-card__gig-word hex-primary">gig</h5>
+      {% else %}
+       <h5 class="hex-primary">{{ package_price }}</h5>
+      {% endif %}
+     {% elsif package_meta != '' %}
+      <h5 class="hex-primary">{{ package_meta }}</h5>
+     {% endif %}
+    </div>
+
+    {% if package_price != '' and package_meta != '' %}
+     <p class="package-card__description">
+      {{ package_meta }}
+     </p>
     {% endif %}
- 
    </div>
-
-
-
-   <p class="package-card__description">
-    {{ package.meta }}
-   </p>
 
    <ul class="package-inclusions">
 
@@ -37,6 +46,6 @@
    </ul>
   </div>
 
-  <a href="{{site.baseurl}}/contact/?band_package={{package_inquiry}}" target="_blank" class="btn btn-accent">INQUIRE</a>
+  {% include snippet/package-cta.html %}
  </div>
 </div>

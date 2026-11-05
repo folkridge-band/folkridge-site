@@ -7,12 +7,12 @@ layout: default
 
 <h1 class="page-title hex-primary">{{rates_page.name}}</h1>
 
-<div class="container">
+<div class="container rates-container">
   <!-- Row Notes -->
   <div class="package__notes hex-gray display-flex__center">
 
         <p class="package__notes-blurb">
-          <strong>Note</strong>: 
+          <strong>Please Note</strong>:
           {% for note_zone in rates_page.zone %}
             {% if note_zone.__component == 'package.note' %}
               {{ note_zone.text }}
@@ -43,8 +43,8 @@ layout: default
     {% assign sorted_packages = strapi.collections.packages | sort: "order" %}
     {% for package in sorted_packages %}
 
-      <!-- Row Packages -->
-      {% if package.to_feature == true %}
+      <!-- Show only packages numbered 1, 2, or 3, in their saved order. -->
+      {% if package.order == 1 or package.order == 2 or package.order == 3 %}
 
         {% include snippet/package-card.html %}
 
