@@ -54,7 +54,7 @@
 }
 
 .offer-item__title-container{
-  // Fit each banner to its title, with room to wrap inside the photo.
+  // Fit each banner to its title and align it with the photo's right edge.
   box-sizing:border-box;
   background:var(--primary);
   padding:4px 10px;
@@ -63,8 +63,7 @@
   bottom:-20px;
   width:max-content;
   max-width:calc(100% - 32px);
-  left:50%;
-  transform:translateX(-50%);
+  right:16px;
   display:flex;
   justify-content:center;
   align-items:center;
