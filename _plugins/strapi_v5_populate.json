@@ -19,6 +19,11 @@
   "packages": {
     "inclusion": true,
     "package_image": true,
+    "button_rate": {
+      "populate": {
+        "button_file": true
+      }
+    },
     "dynamic": {
       "on": {
         "info.social-media": {

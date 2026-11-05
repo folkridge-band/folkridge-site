@@ -1,0 +1,61 @@
+<!-- Button settings: read the optional button_rate component from Strapi. -->
+{% assign button_rate = package.button_rate %}
+{% assign button_type = button_rate.button_type %}
+{% assign button_label = button_rate.button_label | default: '' | strip %}
+
+<!-- Start with no destination so an incomplete CTA stays hidden. -->
+{% assign button_url = '' %}
+
+
+<!-- Choose the destination and default label for this button type. -->
+{% case button_type %}
+
+  {% when 'downloadable file' %}
+    <!-- PDF or file download -->
+    {% assign button_url = button_rate.button_file.url | default: '' | strip %}
+
+    <!-- Ask Cloudinary to download the file instead of displaying it. -->
+    {% if button_rate.button_file.provider == 'cloudinary' %}
+      {% unless button_url contains 'fl_attachment' %}
+        {% assign button_url = button_url | replace: '/upload/', '/upload/fl_attachment/' %}
+      {% endunless %}
+    {% endif %}
+
+    {% assign button_label = button_label | default: 'VIEW RATE GUIDE' %}
+
+
+  {% when 'external link' %}
+    <!-- External website link -->
+    {% assign button_url = button_rate.button_external | default: '' | strip %}
+    {% assign button_label = button_label | default: 'VISIT LINK' %}
+
+
+  {% when 'package rate' %}
+    <!-- Package inquiry: the card or homepage offer supplies package_inquiry. -->
+    {% capture button_url %}
+      {{ site.baseurl }}/contact/?band_package={{ package_inquiry | url_encode }}
+    {% endcapture %}
+
+    <!-- Remove the indentation and line breaks around the captured URL. -->
+    {% assign button_url = button_url | strip %}
+    {% assign button_label = button_label | default: 'INQUIRE' %}
+
+{% endcase %}
+
+
+<!-- Render the same styled button only when a destination is available. -->
+{% if button_url != '' %}
+  <a
+    href="{{ button_url | escape }}"
+    class="btn btn-accent"
+
+    {% if button_type == 'downloadable file' %}
+      download
+    {% else %}
+      target="_blank"
+      rel="noopener noreferrer"
+    {% endif %}
+  >
+    {{ button_label | escape }}
+  </a>
+{% endif %}
